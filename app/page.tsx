@@ -1,7 +1,11 @@
+import ThemeToggle from './ThemeToggle';
+
 export default function Home() {
+  console.log('render');
+
   return (
     <main>
-      <h1>test</h1>
+      <ThemeToggle />
     </main>
   );
 }
