@@ -1,3 +1,6 @@
+'use client';
+
+import { Button } from '@/components/ui/button';
 import ThemeToggle from './ThemeToggle';
 
 export default function Home() {
@@ -5,6 +8,8 @@ export default function Home() {
 
   return (
     <main>
+      <Button variant="outline">Button</Button>
+
       <ThemeToggle />
     </main>
   );
