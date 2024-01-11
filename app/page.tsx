@@ -1,16 +1,16 @@
-'use client';
-
-import { Button } from '@/components/ui/button';
 import ThemeToggle from './ThemeToggle';
+import QuoteComponent from './sigInPage/QuoteComponent';
+import SignInForm from './sigInPage/SignInForm';
 
 export default function Home() {
-  console.log('render');
-
   return (
-    <main>
-      <Button variant="outline">Button</Button>
+    <main className="flex w-full items-center">
+      <QuoteComponent />
+      <SignInForm />
 
-      <ThemeToggle />
+      <div className="absolute bottom-0 right-0">
+        <ThemeToggle />
+      </div>
     </main>
   );
 }
