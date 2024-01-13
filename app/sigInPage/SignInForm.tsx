@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { GrGithub } from 'react-icons/gr';
+import { IoLogoGoogle } from 'react-icons/io';
 
 const SignInForm = () => {
   return (
@@ -11,6 +11,9 @@ const SignInForm = () => {
       <p className="mt-2 text-sm text-gray-400">
         Enter your email below to create your account
       </p>
+      <label htmlFor="email" className="sr-only">
+        Fill in your email:
+      </label>
       <Input
         type="email"
         placeholder="name@example.com"
@@ -23,7 +26,7 @@ const SignInForm = () => {
         Sign In with Email
       </Button>
 
-      <div className="my-8 flex w-full items-center justify-center">
+      <div className="my-6 flex w-full items-center justify-center">
         <div className="h-[1px] flex-grow bg-gray-400"></div>
         <p className="bg-background px-2 text-sm uppercase text-gray-400 after:dark:h-2 after:dark:w-7 after:dark:bg-slate-50">
           OR CONTINUE WITH
@@ -35,9 +38,9 @@ const SignInForm = () => {
         type="button"
         className="h-9 w-full space-x-1 rounded-[6px] border border-zinc-200 bg-transparent hover:bg-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-800"
       >
-        <GrGithub size={20} />
+        <IoLogoGoogle size={20} />
 
-        <span>GitHub</span>
+        <span>Sign up with Google</span>
       </Button>
       <p className="m-auto  mt-8 w-72 text-center text-sm text-gray-400">
         Upon administrator confirmation, your access will be granted.
