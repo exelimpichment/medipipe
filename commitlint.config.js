@@ -44,6 +44,7 @@ module.exports = {
         'test',
         'translation',
         'security',
+        'typo',
       ],
     ],
   },
