@@ -14,7 +14,7 @@ export default function Home() {
       </div>
       <div className="absolute left-[25px] top-[25px] flex items-center space-x-2 text-xl">
         <BsBandaid size={26} />
-        <span>Medipype</span>
+        <span>Medipipe</span>
       </div>
     </main>
   );
