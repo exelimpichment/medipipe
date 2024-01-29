@@ -23,7 +23,7 @@ export const authOptions: NextAuthOptions = {
           pass: process.env.GMAIL_PASSWORD,
         },
       },
-      from: 'info@medipipe.site',
+      from: process.env.EMAIL_FROM,
     }),
   ],
   session: {
@@ -31,6 +31,25 @@ export const authOptions: NextAuthOptions = {
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   pages: { signIn: '/' },
+  callbacks: {
+    async signIn({ user, account }) {
+      if (account?.provider === 'google') {
+        return true;
+      }
+
+      const userExists = await prisma.user.findFirst({
+        where: {
+          email: user.email,
+        },
+      });
+
+      if (userExists) {
+        return true;
+      } else {
+        return '/error/register-first';
+      }
+    },
+  },
 };
 
 const handler = NextAuth(authOptions);
