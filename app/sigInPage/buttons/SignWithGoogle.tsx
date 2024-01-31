@@ -13,7 +13,7 @@ const SignWithGoogle = () => {
         onClick={() => signIn('google', { callbackUrl })}
         type="button"
         variant="default"
-        className="h-9 w-full space-x-1 rounded-[6px] border border-zinc-200 bg-transparent hover:bg-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-800"
+        className="h-9 w-full space-x-1 rounded-[6px] border border-zinc-200 bg-transparent py-3 text-black hover:bg-zinc-100 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-800"
       >
         <IoLogoGoogle size={20} />
 

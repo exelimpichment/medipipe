@@ -45,7 +45,7 @@ const SignInForm = () => {
       </div>
 
       <SignWithGoogle />
-      <p className="m-auto  mt-8 w-72 text-center text-sm text-gray-400">
+      <p className="m-auto mt-6 w-72 text-center text-sm text-gray-400">
         Upon administrator confirmation, your access will be granted.
       </p>
     </div>
