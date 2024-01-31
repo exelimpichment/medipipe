@@ -1,8 +1,14 @@
+'use client';
+
+import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import SignWithEmail from './buttons/SignWithEmail';
+import { useState } from 'react';
+import { emailSubmitHandler } from './actions/emailSubmitHandler';
 import SignWithGoogle from './buttons/SignWithGoogle';
 
 const SignInForm = () => {
+  const [email, setEmail] = useState('');
+
   return (
     <div className="mx-auto flex w-[350px]  flex-col  items-center">
       <h2 className="text-2xl font-semibold tracking-tight">
@@ -16,11 +22,19 @@ const SignInForm = () => {
         Fill in your email:
       </label>
       <Input
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         type="email"
         placeholder="name@example.com"
         className=" mb-2 mt-5 flex h-9 w-full flex-col justify-center rounded-[6px] border-zinc-200 px-3 py-1 text-sm placeholder:text-slate-400 focus:border-gray-400 dark:border-zinc-800 dark:focus:border-white"
       />
-      <SignWithEmail />
+      <Button
+        onClick={() => emailSubmitHandler(email)}
+        type="button"
+        className="h-9 w-full rounded-[6px] bg-zinc-900 text-zinc-50 hover:bg-slate-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-slate-50"
+      >
+        Sign In with Email
+      </Button>
 
       <div className="my-6 flex w-full items-center justify-center">
         <div className="h-[1px] flex-grow bg-gray-400"></div>

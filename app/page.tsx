@@ -1,9 +1,18 @@
+import 'server-only';
+
+import { getServerSession } from 'next-auth';
+import { redirect } from 'next/navigation';
 import { BsBandaid } from 'react-icons/bs';
 import ThemeToggle from './ThemeToggle';
+import { authOptions } from './api/auth/[...nextauth]/route';
 import QuoteComponent from './sigInPage/QuoteComponent';
 import SignInForm from './sigInPage/SignInForm';
 
-export default function Home() {
+export default async function Home() {
+  const data = await getServerSession(authOptions);
+  if (data) {
+    redirect('/dashboard');
+  }
   return (
     <main className="flex w-full items-center">
       <QuoteComponent />

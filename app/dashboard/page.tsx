@@ -1,10 +1,15 @@
-import { getServerSession } from 'next-auth/next';
-import { authOptions } from '../api/auth/[...nextauth]/route';
+'use client';
 
-const Dashboard = async () => {
-  const session = await getServerSession(authOptions);
+import { Button } from '@/components/ui/button';
+import { signOut } from 'next-auth/react';
 
-  return <p className="mt-4">{session?.user?.name}</p>;
+const Dashboard = () => {
+  return (
+    <>
+      <button onClick={() => signOut()}>Sign out</button>
+      <Button variant="destructive">Button</Button>
+    </>
+  );
 };
 
 export default Dashboard;

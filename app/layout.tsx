@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { getServerSession } from 'next-auth';
+import { Toaster } from 'sonner';
 import SessionProvider from './common/SessionProvider';
 import ThemeProvider from './common/ThemeProvider';
 import { inter } from './common/fonts';
+
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -21,6 +23,7 @@ export default async function RootLayout({
       <body>
         <ThemeProvider>
           <SessionProvider session={session}>{children}</SessionProvider>
+          <Toaster expand={true} />
         </ThemeProvider>
       </body>
     </html>
