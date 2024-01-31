@@ -1,9 +1,18 @@
+import 'server-only';
+
+import { getServerSession } from 'next-auth';
+import { redirect } from 'next/navigation';
 import { BsBandaid } from 'react-icons/bs';
 import ThemeToggle from './ThemeToggle';
+import { authOptions } from './api/auth/[...nextauth]/route';
 import QuoteComponent from './sigInPage/QuoteComponent';
 import SignInForm from './sigInPage/SignInForm';
 
-export default function Home() {
+export default async function Home() {
+  const data = await getServerSession(authOptions);
+  if (data) {
+    redirect('/dashboard');
+  }
   return (
     <main className="flex w-full items-center">
       <QuoteComponent />
@@ -12,7 +21,7 @@ export default function Home() {
       <div className="absolute right-[5px] top-[5px]">
         <ThemeToggle />
       </div>
-      <div className="absolute left-[25px] top-[25px] flex items-center space-x-2 text-xl">
+      <div className="absolute left-[25px] top-[25px] flex items-center space-x-2 text-xl text-zinc-50">
         <BsBandaid size={26} />
         <span>Medipipe</span>
       </div>

@@ -1,8 +1,15 @@
+'use client';
+
+// import { Button } from '@/components/ui/button';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { IoLogoGoogle } from 'react-icons/io';
+import { useState } from 'react';
+import { emailSubmitHandler } from './actions/emailSubmitHandler';
+import SignWithGoogle from './buttons/SignWithGoogle';
 
 const SignInForm = () => {
+  const [email, setEmail] = useState('');
+
   return (
     <div className="mx-auto flex w-[350px]  flex-col  items-center">
       <h2 className="text-2xl font-semibold tracking-tight">
@@ -11,15 +18,19 @@ const SignInForm = () => {
       <p className="mt-2 text-sm text-gray-400">
         Enter your email below to create your account
       </p>
+
       <label htmlFor="email" className="sr-only">
         Fill in your email:
       </label>
       <Input
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         type="email"
         placeholder="name@example.com"
-        className=" mb-2 mt-5 flex h-9 w-full flex-col justify-center rounded-[6px] border-zinc-200 px-3 py-1 text-sm placeholder:text-slate-400 focus:border-gray-400 dark:border-zinc-800 dark:focus:border-white"
+        className=" mb-2 mt-5 flex h-9 w-full flex-col justify-center rounded-[6px] border-zinc-200 px-3 py-1 text-sm placeholder:text-slate-400 focus:border-gray-400 focus-visible:ring-1 focus-visible:ring-offset-0 dark:border-zinc-800 dark:focus:border-white"
       />
       <Button
+        onClick={() => emailSubmitHandler(email)}
         type="button"
         className="h-9 w-full rounded-[6px] bg-zinc-900 text-zinc-50 hover:bg-slate-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-slate-50"
       >
@@ -34,15 +45,8 @@ const SignInForm = () => {
         <div className="h-[1px] flex-grow bg-gray-400"></div>
       </div>
 
-      <Button
-        type="button"
-        className="h-9 w-full space-x-1 rounded-[6px] border border-zinc-200 bg-transparent hover:bg-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-800"
-      >
-        <IoLogoGoogle size={20} />
-
-        <span>Sign up with Google</span>
-      </Button>
-      <p className="m-auto  mt-8 w-72 text-center text-sm text-gray-400">
+      <SignWithGoogle />
+      <p className="m-auto mt-6 w-72 text-center text-sm text-gray-400">
         Upon administrator confirmation, your access will be granted.
       </p>
     </div>
