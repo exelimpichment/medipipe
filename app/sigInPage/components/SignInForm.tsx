@@ -2,11 +2,9 @@
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import dynamic from 'next/dynamic';
-import SignWithGoogle from './buttons/SignWithGoogle';
-import useEmailSubmit from './hooks/useEmailSubmit';
-
-const Spinner = dynamic(() => import('../common/LoadingSpinner'));
+import LoadingSpinner from '../../common/LoadingSpinner';
+import SignWithGoogle from '../buttons/SignWithGoogle';
+import useEmailSubmit from '../hooks/useEmailSubmit';
 
 const SignInForm = () => {
   const [email, isLoading, setEmail, signInWithEmail] = useEmailSubmit();
@@ -24,7 +22,6 @@ const SignInForm = () => {
         Fill in your email:
       </label>
       <Input
-        disabled={isLoading}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         type="email"
@@ -35,9 +32,9 @@ const SignInForm = () => {
         disabled={isLoading}
         onClick={() => signInWithEmail()}
         type="button"
-        className="h-9 w-full rounded-[6px] bg-zinc-900 text-zinc-50 hover:bg-slate-800  dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
+        className="h-9 w-full rounded-[6px] bg-zinc-900 text-zinc-50 hover:bg-slate-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-slate-50"
       >
-        {isLoading && <Spinner size={18} />}
+        {isLoading && <LoadingSpinner size={18} />}
         <span className="ml-2">Sign In with Email</span>
       </Button>
 
