@@ -7,8 +7,8 @@ const RegisterFirst = () => {
         <div className="mb-6">
           <h2 className="mb-4 text-2xl font-bold">Oops...</h2>
           <p className=" dark:text-zinc-50">
-            Please create your account with the Google provider to use a magic
-            link in the future.
+            Please create your account with the Google provider first to use a
+            magic link in the future.
           </p>
         </div>
         <div className="mt-4">
