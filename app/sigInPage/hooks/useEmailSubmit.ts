@@ -3,14 +3,14 @@ import { Dispatch, SetStateAction, useState } from 'react';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
-type IUseEmailSubmitse = [
+type IUseEmailSubmit = [
   email: string,
   isLoading: boolean,
   setEmail: Dispatch<SetStateAction<string>>,
   signInWithEmail: () => void,
 ];
 
-const useEmailSubmit = (): IUseEmailSubmitse => {
+const useEmailSubmit = (): IUseEmailSubmit => {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
