@@ -10,8 +10,9 @@
     "analyze": "cross-env ANALYZE=true next build",
     "prettier": "prettier --write .",
     "prepare": "husky install",
-    "cypress:open": "cypress open",
-    "test": "jest",
+    "test:e2e:open": "cypress open",
+    "test:e2e:run": "cypress run",
+    "test": "jest --watchAll",
     "coverage": "npm test --coverage --watchAll"
   },
   "dependencies": {
@@ -50,6 +51,7 @@
     "@types/node": "^20.10.6",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/testing-library__jest-dom": "^6.0.0",
     "autoprefixer": "^10.0.1",
     "cross-env": "^7.0.3",
     "cypress": "^13.6.2",
