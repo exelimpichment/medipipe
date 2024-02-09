@@ -6,6 +6,7 @@ import SessionProvider from './common/providers/SessionProvider';
 import ThemeProvider from './common/providers/ThemeProvider';
 
 import './globals.css';
+import { ModalProvider } from './providers/ModalProvider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -24,6 +25,7 @@ export default async function RootLayout({
         <ThemeProvider>
           <SessionProvider session={session}>{children}</SessionProvider>
           <Toaster expand={true} />
+          <ModalProvider />
         </ThemeProvider>
       </body>
     </html>
