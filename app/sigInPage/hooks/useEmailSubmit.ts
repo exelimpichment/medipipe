@@ -3,12 +3,12 @@ import { Dispatch, SetStateAction, useState } from 'react';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
-type IUseEmailSubmit = [
-  email: string,
-  isLoading: boolean,
-  setEmail: Dispatch<SetStateAction<string>>,
-  signInWithEmail: () => void,
-];
+type IUseEmailSubmit = {
+  email: string;
+  isLoading: boolean;
+  setEmail: Dispatch<SetStateAction<string>>;
+  signInWithEmail: () => void;
+};
 
 const useEmailSubmit = (): IUseEmailSubmit => {
   const [email, setEmail] = useState('');
@@ -18,11 +18,11 @@ const useEmailSubmit = (): IUseEmailSubmit => {
     .string()
     .email({ message: 'Please enter valid email address' });
 
-  const signInWithEmail = () => {
+  const signInWithEmail = async () => {
     try {
       setIsLoading(true);
       emailSchema.parse(email);
-      signIn('email', { email });
+      await signIn('email', { email });
     } catch (error) {
       if (error instanceof z.ZodError) {
         toast.error(error.issues[0].message);
@@ -33,7 +33,7 @@ const useEmailSubmit = (): IUseEmailSubmit => {
     }
   };
 
-  return [email, isLoading, setEmail, signInWithEmail];
+  return { email, isLoading, setEmail, signInWithEmail };
 };
 
 export default useEmailSubmit;

@@ -5,8 +5,8 @@ import { redirect } from 'next/navigation';
 import { BsBandaid } from 'react-icons/bs';
 import ThemeToggle from './ThemeToggle';
 import { authOptions } from './api/auth/[...nextauth]/route';
-import QuoteComponent from './sigInPage/QuoteComponent';
-import SignInForm from './sigInPage/SignInForm';
+import QuoteComponent from './sigInPage/components/QuoteComponent/QuoteComponent';
+import SignInForm from './sigInPage/components/signInForm/SignInForm';
 
 export default async function Home() {
   const data = await getServerSession(authOptions);

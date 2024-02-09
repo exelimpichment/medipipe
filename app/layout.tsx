@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { getServerSession } from 'next-auth';
 import { Toaster } from 'sonner';
-import SessionProvider from './common/SessionProvider';
-import ThemeProvider from './common/ThemeProvider';
-import { inter } from './common/fonts';
+import { inter } from './common/fonts/fonts';
+import SessionProvider from './common/providers/SessionProvider';
+import ThemeProvider from './common/providers/ThemeProvider';
 
 import './globals.css';
 import { ModalProvider } from './providers/ModalProvider';
