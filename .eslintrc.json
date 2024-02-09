@@ -4,13 +4,13 @@
     "next/core-web-vitals",
     "eslint:recommended",
     "plugin:cypress/recommended",
-    "plugin:jest-dom/recommended",
-    "plugin:cypress/recommended"
+    "plugin:jest-dom/recommended"
   ],
   "globals": {
     "React": "readonly"
   },
   "plugins": ["cypress"],
+
   "rules": {
     "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }],
     "cypress/no-assigning-return-values": "error",
