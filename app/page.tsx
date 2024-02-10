@@ -3,8 +3,8 @@ import 'server-only';
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
 import { BsBandaid } from 'react-icons/bs';
-import ThemeToggle from './ThemeToggle';
 import { authOptions } from './api/auth/[...nextauth]/route';
+import ThemeToggle from './common/components/ThemeToggle';
 import QuoteComponent from './sigInPage/components/QuoteComponent/QuoteComponent';
 import SignInForm from './sigInPage/components/signInForm/SignInForm';
 

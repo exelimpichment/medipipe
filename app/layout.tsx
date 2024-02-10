@@ -5,8 +5,9 @@ import { inter } from './common/fonts/fonts';
 import SessionProvider from './common/providers/SessionProvider';
 import ThemeProvider from './common/providers/ThemeProvider';
 
+import NavBar from './common/navbar/Navbar';
+import { ModalProvider } from './common/providers/ModalProvider';
 import './globals.css';
-import { ModalProvider } from './providers/ModalProvider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -23,7 +24,10 @@ export default async function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${inter.variable} `}>
       <body>
         <ThemeProvider>
-          <SessionProvider session={session}>{children}</SessionProvider>
+          <SessionProvider session={session}>
+            <NavBar />
+            {children}
+          </SessionProvider>
           <Toaster expand={true} />
           <ModalProvider />
         </ThemeProvider>
