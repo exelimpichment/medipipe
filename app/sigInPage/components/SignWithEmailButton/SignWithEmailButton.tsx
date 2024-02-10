@@ -1,4 +1,4 @@
-import LoadingSpinner from '@/app/common/components/loadingSpinner/LoadingSpinner';
+import LoadingSpinner from '@/app/common/components/LoadingSpinner';
 import { Button } from '@/components/ui/button';
 
 interface ISignWithEmailButton {
