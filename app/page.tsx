@@ -21,6 +21,7 @@ export default async function Home() {
       <div className="absolute right-[5px] top-[5px]">
         <ThemeToggle />
       </div>
+
       <div className="absolute left-[25px] top-[25px] flex items-center space-x-2 text-xl text-zinc-50">
         <BsBandaid size={26} />
         <span>Medipipe</span>

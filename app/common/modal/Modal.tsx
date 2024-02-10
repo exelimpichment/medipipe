@@ -4,13 +4,11 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from '@/components/ui/dialog';
 
 const Modal = () => {
   return (
-    <Dialog open>
-      <DialogTrigger>Open</DialogTrigger>
+    <Dialog>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Are you absolutely sure?</DialogTitle>

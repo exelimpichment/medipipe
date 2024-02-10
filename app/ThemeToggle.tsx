@@ -1,11 +1,11 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 import { PiSunDimLight } from 'react-icons/pi';
-import { RiMoonLine } from 'react-icons/ri';
 
 const ThemeToggle = () => {
   const [mounted, setMounted] = useState<boolean>(false);
@@ -30,17 +30,25 @@ const ThemeToggle = () => {
 
   if (resolvedTheme === 'dark') {
     return (
-      <button className="flex h-[48px] w-[48px] cursor-pointer items-center justify-center rounded-full hover:bg-gray-400">
+      <Button
+        onClick={() => setTheme('light')}
+        variant={'outline'}
+        className="h-[48px] w-[48px] items-center justify-center rounded-full p-0"
+      >
         <PiSunDimLight size={32} onClick={() => setTheme('light')} />
-      </button>
+      </Button>
     );
   }
 
   if (resolvedTheme === 'light') {
     return (
-      <button className="flex h-[48px] w-[48px] cursor-pointer items-center justify-center rounded-full hover:bg-gray-400">
-        <RiMoonLine size={26} onClick={() => setTheme('dark')} />
-      </button>
+      <Button
+        onClick={() => setTheme('dark')}
+        variant={'outline'}
+        className="h-[48px] w-[48px] items-center justify-center rounded-full p-0"
+      >
+        <PiSunDimLight size={32} onClick={() => setTheme('light')} />
+      </Button>
     );
   }
 };

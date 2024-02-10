@@ -16,7 +16,8 @@ const SignInForm = () => {
       <h2 className="text-2xl font-semibold tracking-tight">
         Create an account
       </h2>
-      <p className="mt-2 text-sm text-gray-400">
+
+      <p className="mt-2 text-sm text-muted-foreground">
         Enter your email below to create your account
       </p>
 
@@ -28,7 +29,7 @@ const SignInForm = () => {
         onChange={(e) => setEmail(e.target.value)}
         type="email"
         placeholder="name@example.com"
-        className=" mb-2 mt-5 flex h-9 w-full flex-col justify-center rounded-[6px] border-zinc-200 px-3 py-1 text-sm placeholder:text-slate-400 focus:border-gray-400 focus-visible:ring-1 focus-visible:ring-offset-0 dark:border-zinc-800 dark:focus:border-white"
+        className="mb-3 mt-5 "
       />
       <SignWithEmailButton isLoading={isLoading} onClick={signInWithEmail} />
 
@@ -44,7 +45,7 @@ const SignInForm = () => {
         isLoading={isLoading}
         onClick={() => signIn('google', { callbackUrl })}
       />
-      <p className="m-auto mt-6 w-72 text-center text-sm text-gray-400">
+      <p className="m-auto mt-6 w-72 text-center text-sm text-muted-foreground">
         Upon administrator confirmation, your access will be granted.
       </p>
     </div>

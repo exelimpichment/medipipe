@@ -21,10 +21,11 @@ const SignWithGoogle: React.FC<ISignWithGoogle> = (props = defaultProps) => {
         disabled={props.isLoading}
         onClick={props.onClick}
         type="button"
-        className="h-9 w-full space-x-1 rounded-[6px] border border-zinc-200 bg-transparent py-3 text-black hover:bg-zinc-100 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-800"
+        variant={'outline'}
+        className="w-full"
       >
         <IoLogoGoogle size={20} />
-        <span>Sign up with Google</span>
+        <span className="pl-2">Sign up with Google</span>
       </Button>
     </>
   );
