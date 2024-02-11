@@ -12,7 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { ArrowDown } from 'lucide-react';
+import { ChevronsUpDown } from 'lucide-react';
 
 type Checked = DropdownMenuCheckboxItemProps['checked'];
 
@@ -26,11 +26,12 @@ export function DropdownStatusTableHead() {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
+            type="button"
             variant="ghost"
             className="h-8 translate-x-[-24px] text-muted-foreground"
           >
             <span className="pr-[6px] text-xs">Status</span>
-            <ArrowDown size={16} />
+            <ChevronsUpDown size={12} className="text-muted-foreground" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent

@@ -31,6 +31,7 @@ const ThemeToggle = () => {
   if (resolvedTheme === 'dark') {
     return (
       <Button
+        type="button"
         onClick={() => setTheme('light')}
         variant={'outline'}
         className="h-[48px] w-[48px] items-center justify-center rounded-full p-0"
@@ -43,6 +44,7 @@ const ThemeToggle = () => {
   if (resolvedTheme === 'light') {
     return (
       <Button
+        type="button"
         onClick={() => setTheme('dark')}
         variant={'outline'}
         className="h-[48px] w-[48px] items-center justify-center rounded-full p-0"

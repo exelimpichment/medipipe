@@ -15,7 +15,12 @@ const FilterButton = ({ children }: { children: React.ReactNode }) => {
   };
   return (
     <div className="relative">
-      <Button variant="dashed" className="h-8" onClick={handleSelect}>
+      <Button
+        type="button"
+        variant="dashed"
+        className="h-8"
+        onClick={handleSelect}
+      >
         {children}
       </Button>
       {dropdownOpen && (

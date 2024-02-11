@@ -24,7 +24,7 @@ export function FilterViewButtonDropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="h-8">
+        <Button type="button" variant="outline" className="h-8">
           <PiSlidersHorizontalDuotone size={16} />
           <span className="pl-[6px]">View</span>
         </Button>
