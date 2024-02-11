@@ -16,17 +16,20 @@ import { ArrowDown } from 'lucide-react';
 
 type Checked = DropdownMenuCheckboxItemProps['checked'];
 
-export function DropdownStatusTableHead() {
+export function DropdownPriorityTableHead() {
   const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true);
   const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false);
   const [showPanel, setShowPanel] = React.useState<Checked>(false);
 
   return (
-    <th scope="col" className="w-28">
+    <th scope="col" className="w-24">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="h-8 text-muted-foreground">
-            <span className="pr-[6px] text-xs">Status</span>
+          <Button
+            variant="ghost"
+            className="h-8 translate-x-[-16px] text-muted-foreground"
+          >
+            <span className="pr-[6px] text-xs">Priority</span>
             <ArrowDown size={16} />
             {/* <ArrowUp size={16} /> */}
           </Button>

@@ -2,7 +2,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 
 const CheckboxTableHead = () => {
   return (
-    <th scope="col" className="flex w-28 items-center space-x-2">
+    <th scope="col" className="flex w-32 items-center space-x-2">
       <Checkbox id="task" />
       <label
         htmlFor="task"

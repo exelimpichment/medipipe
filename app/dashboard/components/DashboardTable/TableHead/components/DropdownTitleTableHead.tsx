@@ -25,7 +25,10 @@ export function DropdownTitleTableHead() {
     <th scope="col" className="flex-1">
       <DropdownMenu>
         <DropdownMenuTrigger asChild className="flex justify-start">
-          <Button variant="ghost" className="h-8 text-muted-foreground">
+          <Button
+            variant="ghost"
+            className="h-8 translate-x-[-16px] text-muted-foreground"
+          >
             <span className="pr-[6px] text-xs">Title</span>
             <ArrowDown size={16} />
             {/* <ArrowUp size={16} /> */}

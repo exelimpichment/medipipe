@@ -7,9 +7,11 @@ import WidthContainer from '../common/width-container';
 
 import DashboardFilters from './components/DashboardFilters';
 import DashboardHeading from './components/DashboardHeading';
-import Table from './components/table';
+import Table from './components/DashboardTable';
 // import TableBody from './components/table/TableBody';
-import TableHead from './components/table/TableHead/TableHead';
+
+import TableBody from './components/DashboardTable/TableBody';
+import TableHead from './components/DashboardTable/TableHead/TableHead';
 
 const Dashboard = () => {
   // const { data: session } = useSession();
@@ -22,12 +24,12 @@ const Dashboard = () => {
           <DashboardFilters />
           <Table>
             <TableHead />
-            {/* <TableBody /> */}
+            <TableBody />
           </Table>
         </WidthContainer>
       </MainTagContainer>
+      <p className="mt-36">margin</p>
       <button onClick={() => signOut()}>Sign out</button>
-      {/* <p>{session?.user?.name}</p> */}
     </>
   );
 };

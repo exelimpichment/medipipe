@@ -7,7 +7,7 @@ import EmptySpacer from './components/EmptySpacer';
 const TableHead = () => {
   return (
     <thead>
-      <tr className="flex h-10 items-center rounded-t-md border border-solid px-2">
+      <tr className="flex h-11 items-center rounded-t-md border border-solid px-2">
         <CheckboxTableHead />
         <DropdownTitleTableHead />
         <DropdownStatusTableHead />
