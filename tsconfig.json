@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "jest.setup.ts"
+    "jest.setup.ts",
+    "app/dashboard/components/DashboardHeading"
   ],
   "exclude": ["./cypress.config.ts", "node_modules", "cypress", "**/*.cy.tsx"]
 }
