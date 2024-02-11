@@ -1,5 +1,6 @@
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowUp, Timer } from 'lucide-react';
+import { TableBodyRowDropdown } from './TableBodyRowDropdown';
 
 const TableBodyRow = () => {
   return (
@@ -26,7 +27,9 @@ const TableBodyRow = () => {
         {/* <ArrowRight size={16} /> */}
         {/* <ArrowDown size={16} /> */}
       </td>
-      <td className="w-12"></td>
+      <td className="w-12">
+        <TableBodyRowDropdown />
+      </td>
     </tr>
   );
 };
