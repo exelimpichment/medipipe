@@ -2,14 +2,15 @@
 
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import Container from '../width-container/Container';
+
+import WidthContainer from '../width-container/WidthContainer';
 import { useNavigation } from './hooks/useNavigation';
 
 const NavBar = () => {
   const links = useNavigation();
   return (
     <nav>
-      <Container>
+      <WidthContainer>
         <ul className="my-6 flex gap-8  text-muted-foreground">
           {links.map(({ active, href, id, title }) => (
             <li
@@ -24,7 +25,7 @@ const NavBar = () => {
             </li>
           ))}
         </ul>
-      </Container>
+      </WidthContainer>
     </nav>
   );
 };
