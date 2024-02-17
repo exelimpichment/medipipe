@@ -1,7 +1,8 @@
 import { Input } from '@/components/ui/input';
 import { PlusCircle } from 'lucide-react';
 import FilterButton from './components/filterButton/FilterButton';
-import { FilterViewButtonDropdown } from './components/filterViewButtonDropdown/FilterViewButtonDropdown';
+import FilterCalendarButton from './components/filterCalendarButton/FilterCalendarButton';
+import FilterViewButtonDropdown from './components/filterViewButtonDropdown';
 
 const DashboardFilters = () => {
   return (
@@ -19,6 +20,7 @@ const DashboardFilters = () => {
           <PlusCircle size={16} />
           <span className="pl-[6px]">Priority</span>
         </FilterButton>
+        <FilterCalendarButton></FilterCalendarButton>
       </div>
 
       <FilterViewButtonDropdown />
