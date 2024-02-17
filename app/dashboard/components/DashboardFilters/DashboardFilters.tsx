@@ -1,26 +1,27 @@
-import { Input } from '@/components/ui/input';
-import { PlusCircle } from 'lucide-react';
 import FilterButton from './components/filterButton/FilterButton';
+import {
+  priories,
+  statuses,
+} from './components/filterButtonDropdown/utils/FilterButtonDropdownArr';
 import FilterCalendarButton from './components/filterCalendarButton/FilterCalendarButton';
+import FilterInput from './components/filterInput/FilterInput';
+
 import FilterViewButtonDropdown from './components/filterViewButtonDropdown';
 
 const DashboardFilters = () => {
   return (
     <section className="mt-8 flex justify-between">
       <div className="flex  gap-2">
-        <Input
-          className="h-8 max-w-[250px] px-3 py-1"
-          placeholder="Filter tasks..."
-        />
-        <FilterButton>
-          <PlusCircle size={16} />
-          <span className="pl-[6px]">Status</span>
-        </FilterButton>
-        <FilterButton>
-          <PlusCircle size={16} />
-          <span className="pl-[6px]">Priority</span>
-        </FilterButton>
-        <FilterCalendarButton></FilterCalendarButton>
+        <FilterInput />
+        <FilterButton
+          category="status"
+          dropdownContent={statuses}
+        ></FilterButton>
+        <FilterButton
+          category="priority"
+          dropdownContent={priories}
+        ></FilterButton>
+        <FilterCalendarButton />
       </div>
 
       <FilterViewButtonDropdown />

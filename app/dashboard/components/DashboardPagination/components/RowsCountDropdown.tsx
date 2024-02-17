@@ -29,10 +29,15 @@ export function RowsCountDropdown() {
         align="start"
         sideOffset={8}
       >
-        <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
-          <DropdownMenuRadioItem value="top">10</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="bottom">20</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="right">30</DropdownMenuRadioItem>
+        <DropdownMenuRadioGroup
+          value={position}
+          onValueChange={(e) => console.log(e)}
+        >
+          <DropdownMenuRadioItem value="10">10</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="20">20</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="30">30</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="40">40</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="50">50</DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -1,18 +1,32 @@
 import { Button } from '@/components/ui/button';
+import { PlusCircle } from 'lucide-react';
 import dynamic from 'next/dynamic';
+import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
+import { FilterButtonDropdownType } from '../filterButtonDropdown/utils/FilterButtonDropdownArr';
+import { capitalizeFirstLetter } from './utils/capitalizeFirstLetter';
 
 const FilterButtonDropdown = dynamic(
   () => import('../filterButtonDropdown/FilterButtonDropdown')
 );
 
-const FilterButton = ({ children }: { children: React.ReactNode }) => {
+interface IFilterButton {
+  category: 'status' | 'priority';
+  dropdownContent: FilterButtonDropdownType[];
+}
+
+const FilterButton: React.FC<IFilterButton> = ({
+  category,
+  dropdownContent,
+}) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [, setSelectedStatus] = useState('');
+  const searchParams = useSearchParams();
+  const selectedFilter = searchParams.get(category);
 
   const handleSelect = () => {
     setDropdownOpen((prev) => !prev);
   };
+
   return (
     <div className="relative">
       <Button
@@ -21,12 +35,25 @@ const FilterButton = ({ children }: { children: React.ReactNode }) => {
         className="h-8"
         onClick={handleSelect}
       >
-        {children}
+        <PlusCircle size={16} />
+        <span className="pl-[6px]">{capitalizeFirstLetter(category)}</span>
+        {selectedFilter && (
+          <>
+            <span className="translate-y-[-2px] px-1 text-xl font-thin text-muted-foreground">
+              |
+            </span>
+            <span className="rounded-sm bg-secondary px-[3px] py-[1px] text-sm font-light text-secondary-foreground text-white">
+              {capitalizeFirstLetter(selectedFilter ?? '')}
+            </span>
+          </>
+        )}
       </Button>
       {dropdownOpen && (
         <FilterButtonDropdown
           setDropdownOpen={setDropdownOpen}
-          setSelectedStatus={setSelectedStatus}
+          category={category}
+          dropdownContent={dropdownContent}
+          selectedFilter={selectedFilter}
         />
       )}
     </div>
