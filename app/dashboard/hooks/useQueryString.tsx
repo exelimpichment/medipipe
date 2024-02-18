@@ -41,7 +41,38 @@ const useQueryString = () => {
     [searchParams]
   );
 
-  return { createQueryString, createDateQueryString, pathname, router };
+  const createLimitQueryString = useCallback(
+    (value: string) => {
+      const params = new URLSearchParams(searchParams);
+
+      params.set('limit', value);
+
+      // if (value === undefined) {
+      //   params.set('to', '');
+      //   params.set('from', '');
+      //   return params.toString();
+      // }
+
+      // if (value.from) {
+      //   params.set('from', format(value.from, 'yyyy-MM-dd'));
+      // }
+
+      // if (value.to) {
+      //   params.set('to', format(value.to, 'yyyy-MM-dd'));
+      // }
+
+      return params.toString();
+    },
+    [searchParams]
+  );
+
+  return {
+    createQueryString,
+    createDateQueryString,
+    createLimitQueryString,
+    pathname,
+    router,
+  };
 };
 
 export default useQueryString;

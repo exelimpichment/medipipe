@@ -13,7 +13,7 @@ const FilterResetButton = () => {
     <Button
       className="h-8"
       variant={'ghost'}
-      onClick={() => router.push('/dashboard')}
+      onClick={() => router.push('/dashboard', { scroll: false })}
     >
       <span className="pr-1">Reset</span>
       <X size={16} />

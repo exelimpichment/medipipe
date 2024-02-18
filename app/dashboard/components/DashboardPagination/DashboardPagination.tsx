@@ -9,6 +9,7 @@ const DashboardPagination = () => {
           0 of 100 row(s) selected.
         </p>
       </div>
+
       <div className="flex items-center gap-8">
         <div className="flex items-center justify-center gap-2">
           <span>Rows per page</span>

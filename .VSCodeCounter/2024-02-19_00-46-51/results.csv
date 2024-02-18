@@ -1,0 +1,114 @@
+"filename", "language", "TypeScript", "JSON with Comments", "JSON", "JavaScript", "TypeScript JSX", "XML", "Markdown", "Prisma", "HTML", "Ignore", "CSS", "comment", "blank", "total"
+"/Users/natan/Desktop/medipype/.eslintrc.json", "JSON with Comments", 0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 26
+"/Users/natan/Desktop/medipype/.prettierignore", "Ignore", 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 4
+"/Users/natan/Desktop/medipype/.prettierrc", "JSON", 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 8
+"/Users/natan/Desktop/medipype/README.md", "Markdown", 0, 0, 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 14, 37
+"/Users/natan/Desktop/medipype/app/api/auth/[...nextauth]/route.ts", "TypeScript", 51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 57
+"/Users/natan/Desktop/medipype/app/chat/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 2, 6
+"/Users/natan/Desktop/medipype/app/common/components/LoadingSpinner.tsx", "TypeScript JSX", 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 3, 12
+"/Users/natan/Desktop/medipype/app/common/components/ThemeToggle.tsx", "TypeScript JSX", 0, 0, 0, 0, 50, 0, 0, 0, 0, 0, 0, 0, 9, 59
+"/Users/natan/Desktop/medipype/app/common/fonts/fonts.ts", "TypeScript", 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 10
+"/Users/natan/Desktop/medipype/app/common/mainTag-container/MainTagContainer.tsx", "TypeScript JSX", 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 2, 6
+"/Users/natan/Desktop/medipype/app/common/mainTag-container/index.ts", "TypeScript", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4
+"/Users/natan/Desktop/medipype/app/common/modal/Modal.tsx", "TypeScript JSX", 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 0, 0, 3, 26
+"/Users/natan/Desktop/medipype/app/common/navbar/Navbar.tsx", "TypeScript JSX", 0, 0, 0, 0, 29, 0, 0, 0, 0, 0, 0, 0, 5, 34
+"/Users/natan/Desktop/medipype/app/common/navbar/hooks/useNavigation.tsx", "TypeScript JSX", 0, 0, 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 4, 44
+"/Users/natan/Desktop/medipype/app/common/providers/ModalProvider.tsx", "TypeScript JSX", 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 6, 23
+"/Users/natan/Desktop/medipype/app/common/providers/SessionProvider.tsx", "TypeScript JSX", 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 4, 10
+"/Users/natan/Desktop/medipype/app/common/providers/ThemeProvider.tsx", "TypeScript JSX", 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 4, 14
+"/Users/natan/Desktop/medipype/app/common/width-container/WidthContainer.tsx", "TypeScript JSX", 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 3, 12
+"/Users/natan/Desktop/medipype/app/common/width-container/index.ts", "TypeScript", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/DashboardFilters.tsx", "TypeScript JSX", 0, 0, 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 4, 28
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/dropdownFilter/DropdownFilter.tsx", "TypeScript JSX", 0, 0, 0, 0, 57, 0, 0, 0, 0, 0, 0, 4, 3, 64
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/filterButton/FilterButton.tsx", "TypeScript JSX", 0, 0, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 7, 64
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/filterButton/utils/capitalizeFirstLetter.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/filterButtonDropdown/FilterButtonDropdown.tsx", "TypeScript JSX", 0, 0, 0, 0, 79, 0, 0, 0, 0, 0, 0, 0, 7, 86
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/filterButtonDropdown/FilterButtonDropdownItem.tsx", "TypeScript JSX", 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 2, 6
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/filterButtonDropdown/utils/FilterButtonDropdownArr.ts", "TypeScript", 61, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 65
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/filterCalendarButton/FilterCalendarButton.tsx", "TypeScript JSX", 0, 0, 0, 0, 31, 0, 0, 0, 0, 0, 0, 0, 6, 37
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/filterCalendarButton/index.ts", "TypeScript", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/filterCalendarButton/utils/getButtonText.ts", "TypeScript", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 13
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/filterCalendarDropdown/FilterCalendarDropdown.tsx", "TypeScript JSX", 0, 0, 0, 0, 28, 0, 0, 0, 0, 0, 0, 0, 5, 33
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/filterCalendarDropdown/hooks/useCalendarSearchParams.tsx", "TypeScript JSX", 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 4, 12
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/filterCalendarDropdown/utils/getDateRangeObject.ts", "TypeScript", 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 26
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/filterInput/FilterInput.tsx", "TypeScript JSX", 0, 0, 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 4, 28
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/filterResetButton/FilterResetButton.tsx", "TypeScript JSX", 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 5, 25
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/filterResetButton/utils/hasQueryParam.ts", "TypeScript", 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 12
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/filterViewButton/filterViewButton.tsx", "TypeScript JSX", 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/filterViewButtonDropdown/FilterViewButtonDropdown.tsx", "TypeScript JSX", 0, 0, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 6, 63
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/components/filterViewButtonDropdown/index.ts", "TypeScript", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardFilters/index.ts", "TypeScript", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardHeading/DashboardHeading.tsx", "TypeScript JSX", 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 0, 0, 2, 13
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardHeading/index.ts", "TypeScript", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardPagination/DashboardPagination.tsx", "TypeScript JSX", 0, 0, 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 4, 28
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardPagination/components/DashboardPaginationButtons.tsx", "TypeScript JSX", 0, 0, 0, 0, 42, 0, 0, 0, 0, 0, 0, 0, 3, 45
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardPagination/components/RowsCountDropdown.tsx", "TypeScript JSX", 0, 0, 0, 0, 52, 0, 0, 0, 0, 0, 0, 0, 5, 57
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardPagination/hooks/useLimitSearchParams.tsx", "TypeScript JSX", 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 3, 10
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardPagination/index.ts", "TypeScript", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardTable/Table.tsx", "TypeScript JSX", 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 2, 8
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardTable/TableBody/TableBody.tsx", "TypeScript JSX", 0, 0, 0, 0, 113, 0, 0, 0, 0, 0, 0, 0, 5, 118
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardTable/TableBody/TableBodyRow.tsx", "TypeScript JSX", 0, 0, 0, 0, 49, 0, 0, 0, 0, 0, 0, 4, 5, 58
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardTable/TableBody/TableBodyRowDropdown.tsx", "TypeScript JSX", 0, 0, 0, 0, 34, 0, 0, 0, 0, 0, 0, 0, 5, 39
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardTable/TableBody/index.ts", "TypeScript", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardTable/TableHead/TableHead.tsx", "TypeScript JSX", 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardTable/TableHead/components/CheckboxTableHead.tsx", "TypeScript JSX", 0, 0, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 3, 18
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardTable/TableHead/components/DropdownTitleTableHead.tsx", "TypeScript JSX", 0, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 1, 7, 71
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardTable/TableHead/index.ts", "TypeScript", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardTable/TableRow.tsx", "TypeScript JSX", 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 2, 6
+"/Users/natan/Desktop/medipype/app/dashboard/components/DashboardTable/index.ts", "TypeScript", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4
+"/Users/natan/Desktop/medipype/app/dashboard/hooks/useQueryString.tsx", "TypeScript JSX", 0, 0, 0, 0, 51, 0, 0, 0, 0, 0, 0, 11, 17, 79
+"/Users/natan/Desktop/medipype/app/dashboard/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 7, 39
+"/Users/natan/Desktop/medipype/app/error/register-first/RegisterFirst.test.tsx", "TypeScript JSX", 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 0, 0, 10, 33
+"/Users/natan/Desktop/medipype/app/error/register-first/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 22, 0, 0, 0, 0, 0, 0, 0, 3, 25
+"/Users/natan/Desktop/medipype/app/globals.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 74, 2, 9, 85
+"/Users/natan/Desktop/medipype/app/layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 5, 37
+"/Users/natan/Desktop/medipype/app/mailbox/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 2, 6
+"/Users/natan/Desktop/medipype/app/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 27, 0, 0, 0, 0, 0, 0, 0, 5, 32
+"/Users/natan/Desktop/medipype/app/profile/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 2, 6
+"/Users/natan/Desktop/medipype/app/providers/ModalProvider.tsx", "TypeScript JSX", 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 6, 23
+"/Users/natan/Desktop/medipype/app/settings/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 2, 6
+"/Users/natan/Desktop/medipype/app/sigInPage/components/QuoteComponent/QuoteComponent.test.tsx", "TypeScript JSX", 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 4, 13
+"/Users/natan/Desktop/medipype/app/sigInPage/components/QuoteComponent/QuoteComponent.tsx", "TypeScript JSX", 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 2, 19
+"/Users/natan/Desktop/medipype/app/sigInPage/components/SignWithEmailButton/SignWithEmailButton.test.tsx", "TypeScript JSX", 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 0, 0, 11, 34
+"/Users/natan/Desktop/medipype/app/sigInPage/components/SignWithEmailButton/SignWithEmailButton.tsx", "TypeScript JSX", 0, 0, 0, 0, 28, 0, 0, 0, 0, 0, 0, 0, 5, 33
+"/Users/natan/Desktop/medipype/app/sigInPage/components/signInForm/SignInForm.test.tsx", "TypeScript JSX", 0, 0, 0, 0, 31, 0, 0, 0, 0, 0, 0, 0, 14, 45
+"/Users/natan/Desktop/medipype/app/sigInPage/components/signInForm/SignInForm.tsx", "TypeScript JSX", 0, 0, 0, 0, 47, 0, 0, 0, 0, 0, 0, 0, 9, 56
+"/Users/natan/Desktop/medipype/app/sigInPage/components/signWithGoogleButton/SignWithGoogle.test.tsx", "TypeScript JSX", 0, 0, 0, 0, 25, 0, 0, 0, 0, 0, 0, 0, 11, 36
+"/Users/natan/Desktop/medipype/app/sigInPage/components/signWithGoogleButton/SignWithGoogleButton.tsx", "TypeScript JSX", 0, 0, 0, 0, 29, 0, 0, 0, 0, 0, 0, 0, 6, 35
+"/Users/natan/Desktop/medipype/app/sigInPage/hooks/useCallbackUrl.test.tsx", "TypeScript JSX", 0, 0, 0, 0, 27, 0, 0, 0, 0, 0, 0, 1, 7, 35
+"/Users/natan/Desktop/medipype/app/sigInPage/hooks/useCallbackUrl.ts", "TypeScript", 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 11
+"/Users/natan/Desktop/medipype/app/sigInPage/hooks/useEmailSubmit.test.tsx", "TypeScript JSX", 0, 0, 0, 0, 43, 0, 0, 0, 0, 0, 0, 0, 12, 55
+"/Users/natan/Desktop/medipype/app/sigInPage/hooks/useEmailSubmit.ts", "TypeScript", 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 40
+"/Users/natan/Desktop/medipype/commitlint.config.js", "JavaScript", 0, 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 10, 2, 52
+"/Users/natan/Desktop/medipype/components.json", "JSON", 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17
+"/Users/natan/Desktop/medipype/components/ui/button.tsx", "TypeScript JSX", 0, 0, 0, 0, 53, 0, 0, 0, 0, 0, 0, 0, 6, 59
+"/Users/natan/Desktop/medipype/components/ui/calendar.tsx", "TypeScript JSX", 0, 0, 0, 0, 61, 0, 0, 0, 0, 0, 0, 0, 6, 67
+"/Users/natan/Desktop/medipype/components/ui/checkbox.tsx", "TypeScript JSX", 0, 0, 0, 0, 26, 0, 0, 0, 0, 0, 0, 0, 5, 31
+"/Users/natan/Desktop/medipype/components/ui/command.tsx", "TypeScript JSX", 0, 0, 0, 0, 137, 0, 0, 0, 0, 0, 0, 0, 19, 156
+"/Users/natan/Desktop/medipype/components/ui/dialog.tsx", "TypeScript JSX", 0, 0, 0, 0, 109, 0, 0, 0, 0, 0, 0, 0, 14, 123
+"/Users/natan/Desktop/medipype/components/ui/dropdown-menu.tsx", "TypeScript JSX", 0, 0, 0, 0, 182, 0, 0, 0, 0, 0, 0, 0, 19, 201
+"/Users/natan/Desktop/medipype/components/ui/input.tsx", "TypeScript JSX", 0, 0, 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 5, 26
+"/Users/natan/Desktop/medipype/components/ui/table.tsx", "TypeScript JSX", 0, 0, 0, 0, 107, 0, 0, 0, 0, 0, 0, 0, 11, 118
+"/Users/natan/Desktop/medipype/cypress.config.ts", "TypeScript", 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 19
+"/Users/natan/Desktop/medipype/cypress/e2e/home_page.cy.js", "JavaScript", 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 1, 2, 9
+"/Users/natan/Desktop/medipype/cypress/fixtures/auth-session.json", "JSON", 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 9
+"/Users/natan/Desktop/medipype/cypress/support/commands.ts", "TypeScript", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 37, 4, 51
+"/Users/natan/Desktop/medipype/cypress/support/component-index.html", "HTML", 0, 0, 0, 0, 0, 0, 0, 0, 13, 0, 0, 1, 0, 14
+"/Users/natan/Desktop/medipype/cypress/support/component.ts", "TypeScript", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 23, 6, 39
+"/Users/natan/Desktop/medipype/cypress/support/e2e.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 3, 21
+"/Users/natan/Desktop/medipype/jest.config.ts", "TypeScript", 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 20
+"/Users/natan/Desktop/medipype/jest.setup.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"/Users/natan/Desktop/medipype/lib/db.ts", "TypeScript", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 17
+"/Users/natan/Desktop/medipype/lib/utils.ts", "TypeScript", 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 7
+"/Users/natan/Desktop/medipype/middleware.ts", "TypeScript", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4
+"/Users/natan/Desktop/medipype/next.config.js", "JavaScript", 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 1, 3, 9
+"/Users/natan/Desktop/medipype/package-lock.json", "JSON", 0, 0, 13267, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13268
+"/Users/natan/Desktop/medipype/package.json", "JSON", 0, 0, 79, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 80
+"/Users/natan/Desktop/medipype/postcss.config.js", "JavaScript", 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"/Users/natan/Desktop/medipype/prisma/schema.prisma", "Prisma", 0, 0, 0, 0, 0, 0, 0, 48, 0, 0, 0, 0, 9, 57
+"/Users/natan/Desktop/medipype/public/next.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/natan/Desktop/medipype/public/vercel.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/natan/Desktop/medipype/tailwind.config.ts", "TypeScript", 78, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 80
+"/Users/natan/Desktop/medipype/tsconfig.json", "JSON with Comments", 0, 35, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 36
+"/Users/natan/Desktop/medipype/tsconfig.spec.json", "JSON", 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6
+"Total", "-", 363, 59, 13383, 57, 2227, 2, 23, 48, 13, 4, 74, 120, 514, 16887
