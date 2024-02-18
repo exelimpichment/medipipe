@@ -5,7 +5,7 @@ import {
 } from './components/filterButtonDropdown/utils/FilterButtonDropdownArr';
 import FilterCalendarButton from './components/filterCalendarButton/FilterCalendarButton';
 import FilterInput from './components/filterInput/FilterInput';
-
+import FilterResetButton from './components/filterResetButton/FilterResetButton';
 import FilterViewButtonDropdown from './components/filterViewButtonDropdown';
 
 const DashboardFilters = () => {
@@ -22,6 +22,7 @@ const DashboardFilters = () => {
           dropdownContent={priories}
         ></FilterButton>
         <FilterCalendarButton />
+        <FilterResetButton />
       </div>
 
       <FilterViewButtonDropdown />

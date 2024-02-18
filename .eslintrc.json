@@ -12,6 +12,7 @@
   "plugins": ["cypress"],
 
   "rules": {
+    "no-debugger": "off",
     "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }],
     "cypress/no-assigning-return-values": "error",
     "cypress/no-unnecessary-waiting": "error",
