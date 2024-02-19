@@ -6,13 +6,23 @@ import { TableBodyRowDropdown } from './TableBodyRowDropdown';
 
 const TableBodyRow = () => {
   type TStatus = 'Todo' | 'In Progress' | 'Done' | 'Canceled';
+  type TPriority = 'High' | 'Medium' | 'Low';
+
   const statuses: TStatus[] = ['Todo', 'In Progress', 'Done', 'Canceled'];
+  const priorities: TPriority[] = ['High', 'Medium', 'Low'];
+
   const [status, setStatus] = useState<TStatus>('In Progress');
+  const [priority, setPriority] = useState<TPriority>('High');
 
   const handleStatusClick = () => {
     const currentIndex = statuses.indexOf(status);
     const nextIndex = (currentIndex + 1) % statuses.length;
     setStatus(statuses[nextIndex]);
+  };
+  const handlePriorityClick = () => {
+    const currentIndex = priorities.indexOf(priority);
+    const nextIndex = (currentIndex + 1) % priorities.length;
+    setPriority(priorities[nextIndex]);
   };
 
   return (
@@ -40,12 +50,14 @@ const TableBodyRow = () => {
         </Button>
       </td>
       <td className="flex w-24 items-center justify-start gap-1">
-        {/* <Button variant="ghost" className="cursor-pointer"> */}
-        <ArrowUp size={16} className="text-muted-foreground" />
-        <span>High</span>
-        {/* </Button> */}
-        {/* <ArrowRight size={16} /> */}
-        {/* <ArrowDown size={16} /> */}
+        <Button
+          variant="ghost"
+          className="gap-1 p-1"
+          onClick={handlePriorityClick}
+        >
+          <ArrowUp size={16} className="text-muted-foreground" />
+          <span>{priority}</span>
+        </Button>
       </td>
       <td className="w-12">
         <TableBodyRowDropdown />
