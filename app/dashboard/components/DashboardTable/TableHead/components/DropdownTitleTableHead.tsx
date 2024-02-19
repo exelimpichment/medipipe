@@ -1,68 +1,59 @@
 'use client';
 
-import { DropdownMenuCheckboxItemProps } from '@radix-ui/react-dropdown-menu';
-import * as React from 'react';
-
+import useQueryString from '@/app/dashboard/hooks/useQueryString';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
-  DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { ChevronsUpDown } from 'lucide-react';
-
-type Checked = DropdownMenuCheckboxItemProps['checked'];
+import { ArrowDownAZ, ArrowUpAZ } from 'lucide-react';
+import useOrderSearchParams from '../hooks/useLimitSearchParams';
 
 export function DropdownTitleTableHead() {
-  const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true);
-  const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false);
-  const [showPanel, setShowPanel] = React.useState<Checked>(false);
+  const {
+    createOrderQueryString,
+    pathname: currentPathname,
+    router,
+  } = useQueryString();
+
+  const order = useOrderSearchParams();
+
+  const OrderIcon = order === 'ascending' ? ArrowUpAZ : ArrowDownAZ;
 
   return (
-    <th scope="col" className="flex-1">
+    <th scope="col">
       <DropdownMenu>
-        <DropdownMenuTrigger asChild className="flex justify-start">
+        <DropdownMenuTrigger asChild>
           <Button
-            type="button"
             variant="ghost"
-            className="h-8 translate-x-[-16px] text-muted-foreground"
+            className="translate-x-[-16px] text-muted-foreground"
           >
-            <span className="text-s pr-[6px]">Title</span>
-            <ChevronsUpDown size={12} className="text-muted-foreground" />
-
-            {/* <ArrowUp size={16} /> */}
+            <span>Title</span>
+            <OrderIcon size={16} className="ml-[4px] text-muted-foreground" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent
-          className="w-32"
-          sideOffset={8}
-          side="bottom"
-          align="start"
-        >
-          <DropdownMenuLabel>Appearance</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuCheckboxItem
-            checked={showStatusBar}
-            onCheckedChange={setShowStatusBar}
+        <DropdownMenuContent className="w-32" align={'start'}>
+          <DropdownMenuRadioGroup
+            value={order ?? 'descending'}
+            onValueChange={(limitSetterEvent) =>
+              router.push(
+                `${currentPathname}?${createOrderQueryString(
+                  limitSetterEvent
+                )}`,
+                { scroll: false }
+              )
+            }
           >
-            Status Bar
-          </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem
-            checked={showActivityBar}
-            onCheckedChange={setShowActivityBar}
-            disabled
-          >
-            Activity Bar
-          </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem
-            checked={showPanel}
-            onCheckedChange={setShowPanel}
-          >
-            Panel
-          </DropdownMenuCheckboxItem>
+            <DropdownMenuRadioItem value="ascending">
+              Ascending
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="descending">
+              Descending
+            </DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
         </DropdownMenuContent>
       </DropdownMenu>
     </th>

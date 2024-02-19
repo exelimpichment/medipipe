@@ -47,19 +47,16 @@ const useQueryString = () => {
 
       params.set('limit', value);
 
-      // if (value === undefined) {
-      //   params.set('to', '');
-      //   params.set('from', '');
-      //   return params.toString();
-      // }
+      return params.toString();
+    },
+    [searchParams]
+  );
 
-      // if (value.from) {
-      //   params.set('from', format(value.from, 'yyyy-MM-dd'));
-      // }
+  const createOrderQueryString = useCallback(
+    (value: string) => {
+      const params = new URLSearchParams(searchParams);
 
-      // if (value.to) {
-      //   params.set('to', format(value.to, 'yyyy-MM-dd'));
-      // }
+      params.set('order', value);
 
       return params.toString();
     },
@@ -70,6 +67,7 @@ const useQueryString = () => {
     createQueryString,
     createDateQueryString,
     createLimitQueryString,
+    createOrderQueryString,
     pathname,
     router,
   };
