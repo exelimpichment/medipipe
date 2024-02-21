@@ -26,7 +26,7 @@ const TableBodyRow = () => {
   };
 
   return (
-    <tr className="flex h-12 border-collapse items-center border px-2 text-sm">
+    <tr className="flex h-12 items-center border-b border-l border-r px-2 text-sm">
       <th scope="col" className="flex w-32 items-center space-x-2">
         <Checkbox id="task" />
         <label

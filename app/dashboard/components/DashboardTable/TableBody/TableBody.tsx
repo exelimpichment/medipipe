@@ -106,7 +106,7 @@ const tableBodyData = [
 
 const TableBody = () => {
   return (
-    <tbody className="border-collapse">
+    <tbody className="">
       {tableBodyData.map((task) => (
         <TableBodyRow key={task.id} />
       ))}

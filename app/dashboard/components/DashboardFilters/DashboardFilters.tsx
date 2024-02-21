@@ -1,3 +1,5 @@
+import { Button } from '@/components/ui/button';
+import { Plus } from 'lucide-react';
 import FilterButton from './components/filterButton/FilterButton';
 import {
   priories,
@@ -18,8 +20,13 @@ const DashboardFilters = () => {
         <FilterCalendarButton />
         <FilterResetButton />
       </div>
-
-      <FilterViewButtonDropdown />
+      <div className="flex items-center justify-center gap-2">
+        <Button className="h-[30px]  gap-1" type="button" variant="default">
+          <Plus size={16} />
+          <span className="">Add Task</span>
+        </Button>
+        <FilterViewButtonDropdown />
+      </div>
     </section>
   );
 };
