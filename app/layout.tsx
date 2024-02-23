@@ -8,6 +8,7 @@ import ThemeProvider from './common/providers/ThemeProvider';
 import NavBar from './common/navbar/Navbar';
 import { ModalProvider } from './common/providers/ModalProvider';
 import './globals.css';
+import { CounterStoreProvider } from './store/CountersStoreProvider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -25,7 +26,7 @@ export default function RootLayout({
         <ThemeProvider>
           <SessionProvider>
             <NavBar />
-            {children}
+            <CounterStoreProvider>{children}</CounterStoreProvider>
           </SessionProvider>
           <Toaster expand={true} />
           <ModalProvider />
