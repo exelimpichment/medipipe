@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/command';
 
 import { Dispatch, SetStateAction } from 'react';
-import { FilterButtonDropdownType } from './utils/FilterButtonDropdownArr';
+import { FilterButtonDropdownType } from '../../utils/filterButtonDropdownArr';
 
 interface IFilterButtonDropdownProps {
   setDropdownOpen: Dispatch<SetStateAction<boolean>>;

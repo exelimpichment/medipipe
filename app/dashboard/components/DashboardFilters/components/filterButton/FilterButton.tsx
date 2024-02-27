@@ -1,10 +1,10 @@
 import { Button } from '@/components/ui/button';
 import { PlusCircle } from 'lucide-react';
 import dynamic from 'next/dynamic';
-import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
-import { FilterButtonDropdownType } from '../filterButtonDropdown/utils/FilterButtonDropdownArr';
-import { capitalizeFirstLetter } from './utils/capitalizeFirstLetter';
+import { useValidateFilterButtonUrl } from '../../hooks/useValidateFilterButtonParamsUrl';
+import { capitalizeFirstLetter } from '../../utils/capitalizeFirstLetter';
+import { FilterButtonDropdownType } from '../../utils/filterButtonDropdownArr';
 
 const FilterButtonDropdown = dynamic(
   () => import('../filterButtonDropdown/FilterButtonDropdown')
@@ -20,8 +20,7 @@ const FilterButton: React.FC<IFilterButton> = ({
   dropdownContent,
 }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const searchParams = useSearchParams();
-  const selectedFilter = searchParams.get(category);
+  const selectedFilter = useValidateFilterButtonUrl(category);
 
   const handleSelect = () => {
     setDropdownOpen((prev) => !prev);
@@ -43,7 +42,7 @@ const FilterButton: React.FC<IFilterButton> = ({
               |
             </span>
             <span className="rounded-sm bg-secondary px-[3px] py-[1px] text-sm font-light text-secondary-foreground text-white">
-              {capitalizeFirstLetter(selectedFilter ?? '')}
+              {capitalizeFirstLetter(selectedFilter)}
             </span>
           </>
         )}

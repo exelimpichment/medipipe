@@ -1,14 +1,11 @@
 import { Button } from '@/components/ui/button';
 import { Plus } from 'lucide-react';
 import FilterButton from './components/filterButton/FilterButton';
-import {
-  priories,
-  statuses,
-} from './components/filterButtonDropdown/utils/FilterButtonDropdownArr';
 import FilterCalendarButton from './components/filterCalendarButton/FilterCalendarButton';
 import FilterInput from './components/filterInput/FilterInput';
 import FilterResetButton from './components/filterResetButton/FilterResetButton';
 import FilterViewButtonDropdown from './components/filterViewButtonDropdown';
+import { priories, statuses } from './utils/filterButtonDropdownArr';
 
 const DashboardFilters = () => {
   return (

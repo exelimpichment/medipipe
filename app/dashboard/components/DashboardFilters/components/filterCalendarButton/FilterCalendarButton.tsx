@@ -2,8 +2,8 @@ import { Button } from '@/components/ui/button';
 import { Calendar } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
-import useCalendarSearchParams from '../filterCalendarDropdown/hooks/useCalendarSearchParams';
-import { getButtonText } from './utils/getButtonText';
+import useCalendarSearchParams from '../../hooks/useValidateCalendarParamsUrl';
+import { getCalendarButtonText } from '../../utils/getCalendarButtonText';
 
 const FilterCalendarDropdown = dynamic(
   () => import('../filterCalendarDropdown/FilterCalendarDropdown')
@@ -26,7 +26,7 @@ const FilterCalendarButton = () => {
         onClick={handleSelect}
       >
         <Calendar size={16} />
-        <span className="ml-[6px]">{getButtonText(from, to)}</span>
+        <span className="ml-[6px]">{getCalendarButtonText(from, to)}</span>
       </Button>
       {dropdownOpen && <FilterCalendarDropdown />}
     </div>

@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { X } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { hasQueryParam } from './utils/hasQueryParam';
+import { hasQueryParam } from '../../utils/hasQueryParam';
 
 const FilterResetButton = () => {
   const searchParams = useSearchParams();

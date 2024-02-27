@@ -10,10 +10,10 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { ChevronsUpDown } from 'lucide-react';
-import useLimitSearchParams from '../hooks/useLimitSearchParams';
+import useValidateLimitSearchParams from '../hooks/useValidateLimitSearchParams';
 
 export function RowsCountDropdown() {
-  const limit = useLimitSearchParams();
+  const limit = useValidateLimitSearchParams();
 
   const {
     createLimitQueryString,
@@ -36,7 +36,7 @@ export function RowsCountDropdown() {
         sideOffset={8}
       >
         <DropdownMenuRadioGroup
-          value={limit ?? '10'}
+          value={limit as string}
           onValueChange={(limitSetterEvent) =>
             router.push(
               `${currentPathname}?${createLimitQueryString(limitSetterEvent)}`,

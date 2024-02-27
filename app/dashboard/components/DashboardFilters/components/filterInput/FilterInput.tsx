@@ -1,32 +1,33 @@
 import useQueryString from '@/app/dashboard/hooks/useQueryString';
 import { Input } from '@/components/ui/input';
+import { useSearchParams } from 'next/navigation';
 import { ChangeEvent, useState } from 'react';
 import { z } from 'zod';
-import useSearchSearchParams from '../../hooks/useSearchSearchParams';
-
-const inputSchema = z.string().regex(/^[a-zA-Z0-9,.-]*$/);
 
 const FilterInput = () => {
-  const [showErrMsg, setShowErrMsg] = useState<Boolean>(false);
-  const search = useSearchSearchParams();
   const {
     createQueryString,
     pathname: currentPathname,
     router,
   } = useQueryString();
 
-  const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    const parseResult = inputSchema.safeParse(event.target.value);
+  const [showErrMsg, setShowErrMsg] = useState<Boolean>(false);
+  const searchParams = useSearchParams();
+  const search = searchParams.get('search');
 
-    if (parseResult.success) {
-      setShowErrMsg(false);
-      router.push(
-        `${currentPathname}?${createQueryString('search', event.target.value)}`
-      );
+  const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    const inputSchema = z.string().regex(/^[a-zA-Z0-9,.-]*$/);
+
+    const result = inputSchema.safeParse(event.target.value);
+
+    if (!result.success) {
+      setShowErrMsg(true);
       return;
     }
-
-    setShowErrMsg(true);
+    setShowErrMsg(false);
+    router.push(
+      `${currentPathname}?${createQueryString('search', result.data)}`
+    );
   };
 
   return (
