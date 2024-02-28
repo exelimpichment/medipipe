@@ -1,3 +1,4 @@
+'use client';
 import useQueryString from '@/app/dashboard/hooks/useQueryString';
 import { Input } from '@/components/ui/input';
 import { useSearchParams } from 'next/navigation';

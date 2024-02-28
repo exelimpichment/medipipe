@@ -1,7 +1,7 @@
 import { useSearchParams } from 'next/navigation';
 import { z } from 'zod';
 
-const useLimitSearchParams = () => {
+const useValidateLimitSearchParams = () => {
   const searchParams = useSearchParams();
   const limit = searchParams.get('limit');
 
@@ -21,4 +21,4 @@ const useLimitSearchParams = () => {
   return limit;
 };
 
-export default useLimitSearchParams;
+export default useValidateLimitSearchParams;

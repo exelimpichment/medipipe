@@ -1,3 +1,6 @@
+import { Suspense } from 'react';
+
+import { Skeleton } from '@/components/ui/skeleton';
 import DashboardPaginationButtons from './components/DashboardPaginationButtons';
 import { RowsCountDropdown } from './components/RowsCountDropdown';
 
@@ -13,11 +16,15 @@ const DashboardPagination = () => {
       <div className="flex items-center gap-8">
         <div className="flex items-center justify-center gap-2">
           <span>Rows per page</span>
-          <RowsCountDropdown />
+
+          <Suspense fallback={<Skeleton className="h-8 w-[65.5px]" />}>
+            <RowsCountDropdown />
+          </Suspense>
         </div>
         <div className="">
           <p>Page 1 of 10</p>
         </div>
+
         <DashboardPaginationButtons />
       </div>
     </div>

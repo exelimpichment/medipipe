@@ -2,10 +2,9 @@ import {
   ArrowDown,
   ArrowLeft,
   ArrowUp,
-  CheckCircle2,
-  Clock2,
+  // CheckCircle2,
+  // Clock2,
   LucideIcon,
-  XCircle,
 } from 'lucide-react';
 
 export type FilterButtonDropdownType = {
@@ -36,29 +35,29 @@ export const priories: FilterButtonDropdownType[] = [
   },
 ];
 
-export const statuses: FilterButtonDropdownType[] = [
-  {
-    id: 0,
-    icon: CheckCircle2,
-    value: 'todo',
-    label: 'Todo',
-  },
-  {
-    id: 1,
-    icon: Clock2,
-    value: 'in progress',
-    label: 'In Progress',
-  },
-  {
-    id: 2,
-    icon: CheckCircle2,
-    value: 'done',
-    label: 'Done',
-  },
-  {
-    id: 3,
-    icon: XCircle,
-    value: 'canceled',
-    label: 'Canceled',
-  },
-];
+// export const statuses: FilterButtonDropdownType[] = [
+//   {
+//     id: 0,
+//     icon: CheckCircle2,
+//     value: 'todo',
+//     label: 'Todo',
+//   },
+//   {
+//     id: 1,
+//     icon: Clock2,
+//     value: 'in progress',
+//     label: 'In Progress',
+//   },
+//   {
+//     id: 2,
+//     icon: CheckCircle2,
+//     value: 'done',
+//     label: 'Done',
+//   },
+//   {
+//     id: 3,
+//     icon: XCircle,
+//     value: 'canceled',
+//     label: 'Canceled',
+//   },
+// ];
