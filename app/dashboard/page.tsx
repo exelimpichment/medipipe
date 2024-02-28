@@ -18,9 +18,7 @@ const Dashboard = () => {
       <MainTagContainer>
         <WidthContainer>
           <DashboardHeading />
-          {/* <Suspense fallback={<Skeleton className="mt-8 h-8 w-full" />}> */}
           <DashboardFilters />
-          {/* </Suspense> */}
           <Table>
             <TableHead />
             <TableBody />

@@ -7,7 +7,6 @@ import { useState } from 'react';
 
 import { useValidateFilterButton } from '@/app/dashboard/hooks/useValidateFilterButtonParams';
 import { capitalizeFirstLetter } from '../../utils/capitalizeFirstLetter';
-import { FilterButtonDropdownType } from '../../utils/filterButtonDropdownArr';
 
 const FilterButtonDropdown = dynamic(
   () => import('../filterButtonDropdown/FilterButtonDropdown')
@@ -15,13 +14,9 @@ const FilterButtonDropdown = dynamic(
 
 interface IFilterButton {
   category: 'status' | 'priority';
-  dropdownContent: FilterButtonDropdownType[];
 }
 
-const FilterButton: React.FC<IFilterButton> = ({
-  category,
-  dropdownContent,
-}) => {
+const FilterButton: React.FC<IFilterButton> = ({ category }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const selectedFilter = useValidateFilterButton(category);
 
@@ -54,7 +49,6 @@ const FilterButton: React.FC<IFilterButton> = ({
         <FilterButtonDropdown
           setDropdownOpen={setDropdownOpen}
           category={category}
-          dropdownContent={dropdownContent}
           selectedFilter={selectedFilter}
         />
       )}

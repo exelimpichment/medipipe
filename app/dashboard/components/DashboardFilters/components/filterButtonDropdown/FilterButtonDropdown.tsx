@@ -10,19 +10,18 @@ import {
 } from '@/components/ui/command';
 
 import { Dispatch, SetStateAction } from 'react';
-import { FilterButtonDropdownType } from '../../utils/filterButtonDropdownArr';
+import { dropdownContent } from '../../utils/filterButtonDropdownArr';
 
 interface IFilterButtonDropdownProps {
   setDropdownOpen: Dispatch<SetStateAction<boolean>>;
   category: 'status' | 'priority';
-  dropdownContent: FilterButtonDropdownType[];
   selectedFilter: string | null;
 }
 
 const FilterButtonDropdown: React.FC<IFilterButtonDropdownProps> = ({
   setDropdownOpen,
   category,
-  dropdownContent,
+
   selectedFilter,
 }) => {
   const {
@@ -38,7 +37,7 @@ const FilterButtonDropdown: React.FC<IFilterButtonDropdownProps> = ({
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup>
-            {dropdownContent.map(({ icon: Icon, label, value }) => (
+            {dropdownContent[category].map(({ icon: Icon, label, value }) => (
               <CommandItem
                 className="cursor-pointer"
                 key={value}
