@@ -18,7 +18,7 @@ const useValidateLimitSearchParams = () => {
     return '10';
   }
 
-  return limit;
+  return result.data;
 };
 
 export default useValidateLimitSearchParams;

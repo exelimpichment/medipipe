@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { ArrowDownAZ, ArrowUpAZ } from 'lucide-react';
-import useOrderSearchParams from '../hooks/useLimitSearchParams';
+import useOrderSearchParams from '../../../../hooks/useValidateOrderSearchParams';
 
 export function DropdownTitleTableHead() {
   const {
@@ -37,7 +37,7 @@ export function DropdownTitleTableHead() {
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-32" align={'start'}>
           <DropdownMenuRadioGroup
-            value={order ?? 'descending'}
+            value={order}
             onValueChange={(limitSetterEvent) =>
               router.push(
                 `${currentPathname}?${createOrderQueryString(

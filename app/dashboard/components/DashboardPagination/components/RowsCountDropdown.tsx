@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { ChevronsUpDown } from 'lucide-react';
-import useValidateLimitSearchParams from '../hooks/useValidateLimitSearchParams';
+import useValidateLimitSearchParams from '../../../hooks/useValidateLimitSearchParams';
 
 export function RowsCountDropdown() {
   const limit = useValidateLimitSearchParams();

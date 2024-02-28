@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Calendar } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
-import useCalendarSearchParams from '../../hooks/useValidateCalendarParamsUrl';
+import useCalendarSearchParams from '../../../../hooks/useValidateCalendarParams';
 import { getCalendarButtonText } from '../../utils/getCalendarButtonText';
 
 const FilterCalendarDropdown = dynamic(

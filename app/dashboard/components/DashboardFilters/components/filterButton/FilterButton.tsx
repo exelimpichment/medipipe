@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { PlusCircle } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
-import { useValidateFilterButtonUrl } from '../../hooks/useValidateFilterButtonParamsUrl';
+
+import { useValidateFilterButton } from '@/app/dashboard/hooks/useValidateFilterButtonParams';
 import { capitalizeFirstLetter } from '../../utils/capitalizeFirstLetter';
 import { FilterButtonDropdownType } from '../../utils/filterButtonDropdownArr';
 
@@ -22,7 +23,7 @@ const FilterButton: React.FC<IFilterButton> = ({
   dropdownContent,
 }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const selectedFilter = useValidateFilterButtonUrl(category);
+  const selectedFilter = useValidateFilterButton(category);
 
   const handleSelect = () => {
     setDropdownOpen((prev) => !prev);

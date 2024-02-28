@@ -1,7 +1,7 @@
 import { useSearchParams } from 'next/navigation';
 import { z } from 'zod';
 
-export const useValidateFilterButtonUrl = (category: 'status' | 'priority') => {
+export const useValidateFilterButton = (category: 'status' | 'priority') => {
   const searchParams = useSearchParams();
   const selectedFilter = searchParams.get(category);
 

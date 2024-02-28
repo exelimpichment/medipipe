@@ -1,6 +1,6 @@
 import useQueryString from '@/app/dashboard/hooks/useQueryString';
 import { Calendar } from '@/components/ui/calendar';
-import useCalendarSearchParams from '../../hooks/useValidateCalendarParamsUrl';
+import useCalendarSearchParams from '../../../../hooks/useValidateCalendarParams';
 import { getDateRangeObject } from '../../utils/getDateRangeObject';
 
 const FilterCalendarDropdown = () => {
