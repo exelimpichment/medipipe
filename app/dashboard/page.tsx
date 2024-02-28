@@ -2,8 +2,8 @@
 
 import MainTagContainer from '../common/mainTag-container';
 
-import { Skeleton } from '@/components/ui/skeleton';
-import { Suspense } from 'react';
+// import { Skeleton } from '@/components/ui/skeleton';
+// import { Suspense } from 'react';
 import WidthContainer from '../common/width-container';
 import DashboardFilters from './components/DashboardFilters';
 import DashboardHeading from './components/DashboardHeading';
@@ -18,9 +18,9 @@ const Dashboard = () => {
       <MainTagContainer>
         <WidthContainer>
           <DashboardHeading />
-          <Suspense fallback={<Skeleton className="mt-8 h-8 w-full" />}>
-            <DashboardFilters />
-          </Suspense>
+          {/* <Suspense fallback={<Skeleton className="mt-8 h-8 w-full" />}> */}
+          <DashboardFilters />
+          {/* </Suspense> */}
           <Table>
             <TableHead />
             <TableBody />
