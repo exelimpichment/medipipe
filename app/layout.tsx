@@ -7,6 +7,7 @@ import ThemeProvider from './common/providers/ThemeProvider';
 
 import NavBar from './common/navbar/Navbar';
 import { ModalProvider } from './common/providers/ModalProvider';
+import TanQueryClientProvider from './common/providers/TanQueryClientProvider';
 import './globals.css';
 import { CounterStoreProvider } from './store/CountersStoreProvider';
 
@@ -25,8 +26,10 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <SessionProvider>
+            <TanQueryClientProvider>
             <NavBar />
             <CounterStoreProvider>{children}</CounterStoreProvider>
+            </TanQueryClientProvider>
           </SessionProvider>
           <Toaster expand={true} />
           <ModalProvider />
