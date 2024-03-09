@@ -26,6 +26,7 @@ export default function RootLayout({
         <ThemeProvider>
           <SessionProvider>
             <NavBar />
+            <NavBar />
             <CounterStoreProvider>{children}</CounterStoreProvider>
           </SessionProvider>
           <Toaster expand={true} />
