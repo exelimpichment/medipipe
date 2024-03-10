@@ -6,10 +6,10 @@ import SessionProvider from './common/providers/SessionProvider';
 import ThemeProvider from './common/providers/ThemeProvider';
 
 import NavBar from './common/navbar/Navbar';
-import { ModalProvider } from './common/providers/ModalProvider';
+import { Modal } from './common/providers/ModalProvider';
 import TanQueryClientProvider from './common/providers/TanQueryClientProvider';
 import './globals.css';
-import { CounterStoreProvider } from './store/CountersStoreProvider';
+import { ModalStoreProvider } from './store/ModalStoreProvider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -27,12 +27,14 @@ export default function RootLayout({
         <ThemeProvider>
           <SessionProvider>
             <TanQueryClientProvider>
-            <NavBar />
-            <CounterStoreProvider>{children}</CounterStoreProvider>
+              <NavBar />
+              <ModalStoreProvider>
+                {children}
+                <Modal />
+              </ModalStoreProvider>
             </TanQueryClientProvider>
           </SessionProvider>
           <Toaster expand={true} />
-          <ModalProvider />
         </ThemeProvider>
       </body>
     </html>

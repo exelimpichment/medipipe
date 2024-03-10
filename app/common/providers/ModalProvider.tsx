@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Modal from '../modal/Modal';
+import ModalWrapper from '../modals/ModalWrapper';
 
-export const ModalProvider = () => {
+export const Modal = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export const ModalProvider = () => {
 
   return (
     <>
-      <Modal />
+      <ModalWrapper />
     </>
   );
 };

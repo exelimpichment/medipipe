@@ -1,7 +1,6 @@
-import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Plus } from 'lucide-react';
 import { Suspense } from 'react';
+import AddTaskButton from './components/addTaskButton/AddTaskButton';
 import FilterButton from './components/filterButton';
 import FilterCalendarButton from './components/filterCalendarButton/FilterCalendarButton';
 import FilterInput from './components/filterInput/FilterInput';
@@ -32,10 +31,7 @@ const DashboardFilters = () => {
       </div>
 
       <div className="flex items-center justify-center gap-2">
-        <Button className="h-[30px]  gap-1" type="button" variant="default">
-          <Plus size={16} />
-          <span className="">Add Task</span>
-        </Button>
+        <AddTaskButton />
         <FilterViewButtonDropdown />
       </div>
     </section>

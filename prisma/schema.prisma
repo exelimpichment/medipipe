@@ -1,27 +1,26 @@
 generator client {
   provider = "prisma-client-js"
-
 }
 
 datasource db {
-  provider = "mysql"
-  url = env("DATABASE_URL")
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
   relationMode = "prisma"
 }
-  
+
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String 
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String?  @db.Text
-  access_token       String?  @db.Text
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?  @db.Text
-  session_state      String?
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -35,7 +34,8 @@ model Session {
   userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-    @@index([userId])
+
+  @@index([userId])
 }
 
 model User {
@@ -46,6 +46,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  tasks         Task[]
 }
 
 model VerificationToken {
@@ -54,4 +55,33 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Task {
+  id          String     @id @default(cuid())
+  title       String
+  userId      String
+  description String
+  statusId    Int
+  priorityId  Int
+  createdAt   DateTime   @default(now())
+  priority    Priorities @relation(fields: [priorityId], references: [id], onDelete: NoAction)
+  status      Statuses   @relation(fields: [statusId], references: [id], onDelete: NoAction)
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([priorityId])
+  @@index([statusId])
+  @@index([userId])
+}
+
+model Statuses {
+  id         Int    @id @default(autoincrement())
+  statusName String
+  tasks      Task[]
+}
+
+model Priorities {
+  id         Int    @id @default(autoincrement())
+  statusName String
+  tasks      Task[]
 }
