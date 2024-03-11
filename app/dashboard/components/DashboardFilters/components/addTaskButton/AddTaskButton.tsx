@@ -3,10 +3,12 @@
 import { useModalStore } from '@/app/store/ModalStoreProvider';
 import { Button } from '@/components/ui/button';
 import { Plus } from 'lucide-react';
+import { useShallow } from 'zustand/react/shallow';
 
 const AddTaskButton = () => {
-  const onOpen = useModalStore((state) => state.onOpen);
-  const setModalInternals = useModalStore((state) => state.setModalInternals);
+  const [onOpen, setModalInternals] = useModalStore(
+    useShallow((state) => [state.onOpen, state.setModalInternals])
+  );
 
   const clickHandler = () => {
     setModalInternals('addTask');

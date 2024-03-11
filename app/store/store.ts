@@ -15,8 +15,8 @@ export type IModalStore = State & Action;
 
 export const createModalStore = () => {
   return createStore<IModalStore>()((set) => ({
-    modalInternals: null,
     isOpen: false,
+    modalInternals: null,
 
     setModalInternals: (modalInternals) =>
       set(() => ({ modalInternals: modalInternals })),

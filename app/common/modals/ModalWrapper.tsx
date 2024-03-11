@@ -5,13 +5,19 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogClose, DialogContent } from '@/components/ui/dialog';
 import { X } from 'lucide-react';
 import dynamic from 'next/dynamic';
+import { useShallow } from 'zustand/react/shallow';
+
 const AddTaskModal = dynamic(() => import('./AddTaskModal'));
 
 const ModalWrapper = () => {
-  const isOpen = useModalStore((state) => state.isOpen);
-  const onClose = useModalStore((state) => state.onClose);
-  const modalInternals = useModalStore((state) => state.modalInternals);
-  const setModalInternals = useModalStore((state) => state.setModalInternals);
+  const [isOpen, onClose, modalInternals, setModalInternals] = useModalStore(
+    useShallow((state) => [
+      state.isOpen,
+      state.onClose,
+      state.modalInternals,
+      state.setModalInternals,
+    ])
+  );
 
   const clickHandler = async () => {
     onClose();
