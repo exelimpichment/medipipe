@@ -9,7 +9,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { ArrowDownAZ, ArrowUpAZ } from 'lucide-react';
+import { ArrowDownNarrowWide, ArrowUpWideNarrow } from 'lucide-react';
 import useOrderSearchParams from '../../../../hooks/useValidateOrderSearchParams';
 
 export function DropdownTitleTableHead() {
@@ -21,7 +21,8 @@ export function DropdownTitleTableHead() {
 
   const order = useOrderSearchParams();
 
-  const OrderIcon = order === 'ascending' ? ArrowUpAZ : ArrowDownAZ;
+  const OrderIcon =
+    order === 'ascending' ? ArrowUpWideNarrow : ArrowDownNarrowWide;
 
   return (
     <th scope="col">
@@ -31,7 +32,7 @@ export function DropdownTitleTableHead() {
             variant="ghost"
             className="translate-x-[-16px] text-muted-foreground"
           >
-            <span>Title</span>
+            <span>Date</span>
             <OrderIcon size={16} className="ml-[4px] text-muted-foreground" />
           </Button>
         </DropdownMenuTrigger>

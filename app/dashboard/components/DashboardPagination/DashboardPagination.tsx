@@ -21,10 +21,6 @@ const DashboardPagination = () => {
             <RowsCountDropdown />
           </Suspense>
         </div>
-        <div className="">
-          <p>Page 1 of 10</p>
-        </div>
-
         <DashboardPaginationButtons />
       </div>
     </div>
