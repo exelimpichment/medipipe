@@ -21,7 +21,9 @@ const NavBar = () => {
                 { 'text-white': active }
               )}
             >
-              <Link href={href}>{title}</Link>
+              <Link href={href} prefetch={true}>
+                {title}
+              </Link>
             </li>
           ))}
         </ul>

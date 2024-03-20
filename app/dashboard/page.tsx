@@ -1,9 +1,5 @@
 // import { signOut } from 'next-auth/react';
-
 import MainTagContainer from '../common/mainTag-container';
-
-// import { Skeleton } from '@/components/ui/skeleton';
-// import { Suspense } from 'react';
 import WidthContainer from '../common/width-container';
 import DashboardFilters from './components/DashboardFilters';
 import DashboardHeading from './components/DashboardHeading';
@@ -12,7 +8,7 @@ import Table from './components/DashboardTable';
 import TableBody from './components/DashboardTable/TableBody';
 import TableHead from './components/DashboardTable/TableHead';
 
-const Dashboard = () => {
+const Dashboard = async () => {
   return (
     <>
       <MainTagContainer>

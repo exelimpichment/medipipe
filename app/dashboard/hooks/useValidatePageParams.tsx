@@ -8,11 +8,7 @@ const useValidatePageParams = () => {
   const pageNumberSchema = z.coerce.number();
   const result = pageNumberSchema.safeParse(page);
 
-  if (!result.success) {
-    return '1';
-  }
-
-  if (result.data === 0) {
+  if (!result.success || result.data === 0) {
     return '1';
   }
 
