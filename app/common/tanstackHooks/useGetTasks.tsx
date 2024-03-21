@@ -1,9 +1,9 @@
-import getTasks from '@/data-access/tasks/tasks-dto';
-import { useQuery } from '@tanstack/react-query';
+import { getTasks } from '@/actions/tasks';
+import { useSuspenseQuery } from '@tanstack/react-query';
 
 const useGetTasks = () => {
-  return useQuery({
-    queryKey: ['pokemons'],
+  return useSuspenseQuery({
+    queryKey: ['tasks'],
     queryFn: async () => getTasks(),
   });
 };

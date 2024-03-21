@@ -1,4 +1,3 @@
-// import { signOut } from 'next-auth/react';
 import MainTagContainer from '../common/mainTag-container';
 import WidthContainer from '../common/width-container';
 import DashboardFilters from './components/DashboardFilters';
@@ -23,9 +22,6 @@ const Dashboard = async () => {
         </WidthContainer>
       </MainTagContainer>
       <p className="pt-36"></p>
-      {/* <button type="button" onClick={() => signOut()}>
-        Sign out
-      </button> */}
     </>
   );
 };

@@ -2,7 +2,12 @@ import 'server-only';
 
 import prisma from '@/lib/db';
 import { PrismaAdapter } from '@auth/prisma-adapter';
-import NextAuth, { NextAuthOptions } from 'next-auth';
+import {
+  GetServerSidePropsContext,
+  NextApiRequest,
+  NextApiResponse,
+} from 'next';
+import NextAuth, { NextAuthOptions, getServerSession } from 'next-auth';
 import type { Adapter } from 'next-auth/adapters';
 import EmailProvider from 'next-auth/providers/email';
 import GoogleProvider from 'next-auth/providers/google';
@@ -54,3 +59,12 @@ export const authOptions: NextAuthOptions = {
 
 const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
+
+export async function auth(
+  ...args:
+    | [GetServerSidePropsContext['req'], GetServerSidePropsContext['res']]
+    | [NextApiRequest, NextApiResponse]
+    | []
+) {
+  return getServerSession(...args, authOptions);
+}
