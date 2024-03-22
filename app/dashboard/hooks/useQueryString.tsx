@@ -25,8 +25,8 @@ const useQueryString = () => {
       const params = new URLSearchParams(searchParams);
 
       if (value === undefined) {
-        params.set('to', '');
-        params.set('from', '');
+        params.delete('to');
+        params.delete('from');
         return params.toString();
       }
 
@@ -89,7 +89,6 @@ const useQueryString = () => {
   const createQueryStringOnParamsDelete = useCallback(
     (name: string) => {
       const params = new URLSearchParams(searchParams.toString());
-      console.log();
 
       params.delete(name);
 

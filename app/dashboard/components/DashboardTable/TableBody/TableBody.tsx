@@ -11,7 +11,6 @@ const TableBody = () => {
       return { [key]: value };
     }
   );
-  console.log(keyValueArray);
 
   const { status, data, error } = useGetTasks();
 

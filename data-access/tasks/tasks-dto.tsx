@@ -42,7 +42,6 @@ export const getTasksDTO = async () => {
       },
     },
   });
-  // console.log(tasksList);
 
   const session = await auth();
   return canReceiveTaskList(session?.user) ? tasksList : null;
