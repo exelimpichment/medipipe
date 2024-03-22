@@ -21,13 +21,13 @@ interface IFilterButtonDropdownProps {
 const FilterButtonDropdown: React.FC<IFilterButtonDropdownProps> = ({
   setDropdownOpen,
   category,
-
   selectedFilter,
 }) => {
   const {
     createQueryString,
     pathname: currentPathname,
     router,
+    createQueryStringOnParamsDelete,
   } = useQueryString();
 
   return (
@@ -64,7 +64,9 @@ const FilterButtonDropdown: React.FC<IFilterButtonDropdownProps> = ({
                 <CommandItem
                   onSelect={() => {
                     router.push(
-                      `${currentPathname}?${createQueryString(category, '')}`
+                      `${currentPathname}?${createQueryStringOnParamsDelete(
+                        category
+                      )}`
                     );
                     setDropdownOpen(false);
                   }}

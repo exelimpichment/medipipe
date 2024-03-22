@@ -16,7 +16,34 @@ function canReceiveTaskList(user: User) {
 }
 
 export const getTasksDTO = async () => {
-  const tasksList = await prisma.tasks.findMany();
+  const tasksList = await prisma.tasks.findMany({
+    select: {
+      id: true,
+      description: true,
+      title: true,
+      createdAt: true,
+
+      user: {
+        select: {
+          id: true,
+          name: true,
+        },
+      },
+
+      status: {
+        select: {
+          statusName: true,
+        },
+      },
+      priority: {
+        select: {
+          priorityName: true,
+        },
+      },
+    },
+  });
+  // console.log(tasksList);
+
   const session = await auth();
   return canReceiveTaskList(session?.user) ? tasksList : null;
 };

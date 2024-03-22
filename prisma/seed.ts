@@ -1,5 +1,7 @@
-import prisma from '@/lib/db';
+import { PrismaClient } from '@prisma/client';
 import { generateTasks } from './generateTasks';
+
+const prisma = new PrismaClient();
 
 async function main() {
   const tasks = await prisma.tasks.createMany({

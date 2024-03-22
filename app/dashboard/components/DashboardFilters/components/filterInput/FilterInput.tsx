@@ -1,34 +1,56 @@
 'use client';
 import useQueryString from '@/app/dashboard/hooks/useQueryString';
 import { Input } from '@/components/ui/input';
-import { useSearchParams } from 'next/navigation';
-import { ChangeEvent, useState } from 'react';
+import { useRef, useState } from 'react';
 import { z } from 'zod';
 
 const FilterInput = () => {
+  const [showErrMsg, setShowErrMsg] = useState<Boolean>(false);
+  const [input, setInput] = useState<string>('');
+
+  const timerIdRef = useRef<NodeJS.Timeout | null>(null);
+  const searchValueRef = useRef<string>('');
+
   const {
     createQueryString,
     pathname: currentPathname,
     router,
+    createQueryStringOnParamsDelete,
   } = useQueryString();
 
-  const [showErrMsg, setShowErrMsg] = useState<Boolean>(false);
-  const searchParams = useSearchParams();
-  const search = searchParams.get('search');
-
-  const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+  const changeInput = (inputValue: string) => {
     const inputSchema = z.string().regex(/^[a-zA-Z0-9,.-]*$/);
 
-    const result = inputSchema.safeParse(event.target.value);
+    const result = inputSchema.safeParse(inputValue);
 
     if (!result.success) {
       setShowErrMsg(true);
       return;
     }
     setShowErrMsg(false);
+
+    if (result.data.length === 0) {
+      router.push(
+        `${currentPathname}?${createQueryStringOnParamsDelete('search')}`
+      );
+      return;
+    }
     router.push(
       `${currentPathname}?${createQueryString('search', result.data)}`
     );
+  };
+
+  const handleInputChange = (value: string) => {
+    setInput(value);
+    searchValueRef.current = value;
+
+    if (timerIdRef.current !== null) {
+      clearTimeout(timerIdRef.current);
+    }
+    timerIdRef.current = setTimeout(() => {
+      changeInput(searchValueRef.current);
+      timerIdRef.current = null;
+    }, 700);
   };
 
   return (
@@ -40,10 +62,10 @@ const FilterInput = () => {
       )}
 
       <Input
-        value={search ?? ''}
+        value={input}
         className="h-8 max-w-[250px] px-3 py-1"
         placeholder="Filter tasks..."
-        onChange={(event) => onChangeHandler(event)}
+        onChange={(e) => handleInputChange(e.target.value)}
       />
     </div>
   );

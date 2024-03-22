@@ -86,6 +86,18 @@ const useQueryString = () => {
     [searchParams, page]
   );
 
+  const createQueryStringOnParamsDelete = useCallback(
+    (name: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      console.log();
+
+      params.delete(name);
+
+      return params.toString();
+    },
+    [searchParams]
+  );
+
   return {
     createQueryString,
     createDateQueryString,
@@ -94,6 +106,7 @@ const useQueryString = () => {
     createPageQueryString,
     pathname,
     router,
+    createQueryStringOnParamsDelete,
   };
 };
 
