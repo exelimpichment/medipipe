@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ArrowUp, Timer } from 'lucide-react';
-import { TableBodyRowDropdown } from './TableBodyRowDropdown';
+import { TableBodyRowOptionsButton } from './TableBodyRowOptionsButton';
 
 interface ITableBodyRowProps {
   taskId: number;
@@ -78,7 +78,7 @@ const TableBodyRow: React.FC<ITableBodyRowProps> = ({
         </Button>
       </td>
       <td className="w-12">
-        <TableBodyRowDropdown />
+        <TableBodyRowOptionsButton />
       </td>
     </tr>
   );
