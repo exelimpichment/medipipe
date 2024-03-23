@@ -65,7 +65,7 @@ model Tasks {
   description String
   statusId    Int
   priorityId  Int
-  createdAt   DateTime   @default(now())
+  createdAt   DateTime   @default(now()) @db.Timestamp(0)
   priority    Priorities @relation(fields: [priorityId], references: [id], onDelete: NoAction)
   status      Statuses   @relation(fields: [statusId], references: [id], onDelete: NoAction)
   user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
