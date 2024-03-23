@@ -3,7 +3,6 @@ import 'server-only';
 import { z } from 'zod';
 
 export const tasksSchema = z.object({
-  // priority: z.enum(['high', 'low', 'medium']).optional(),
   priority: z
     .literal('high')
     .or(z.literal('low'))
@@ -40,4 +39,5 @@ export const tasksSchema = z.object({
       message: 'has to be of type YYYY-MM-DD',
     })
     .optional(),
+  order: z.literal('ascending').or(z.literal('descending')).optional(),
 });
