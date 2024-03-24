@@ -1,6 +1,5 @@
 import {
   Command,
-  CommandEmpty,
   CommandGroup,
   CommandItem,
   CommandList,
@@ -20,7 +19,6 @@ const TableBodyRowOptionsButtonDropdown = () => {
     <div className="absolute right-0 z-10 mt-1 w-32 rounded-md border">
       <Command>
         <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup>
             {dropdownContent.map(({ icon: Icon, label, value }) => (
               <CommandItem

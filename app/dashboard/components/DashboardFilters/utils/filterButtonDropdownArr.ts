@@ -3,6 +3,7 @@ import {
   ArrowLeft,
   ArrowUp,
   CheckCircle2,
+  Circle,
   Clock2,
   LucideIcon,
   XCircle,
@@ -39,7 +40,7 @@ export const dropdownContent = {
   status: [
     {
       id: 0,
-      icon: CheckCircle2,
+      icon: Circle,
       value: 'todo',
       label: 'Todo',
     },
