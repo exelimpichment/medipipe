@@ -7,7 +7,7 @@ import TableBodyRow from './TableBodyRow';
 const TableBody = () => {
   const keyValueArray = useArrayFromSearchParams();
 
-  const { status, data, error } = useGetTasks(keyValueArray);
+  const { status, data, error, isFetching } = useGetTasks(keyValueArray);
 
   if (!data) return <h1>loading ...</h1>;
   if (error) return <h1>error ...</h1>;
