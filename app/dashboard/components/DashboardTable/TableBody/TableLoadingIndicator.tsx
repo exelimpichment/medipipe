@@ -1,7 +1,7 @@
 'use client';
 
 import useGetTasks from '@/app/common/tanstackHooks/useGetTasks';
-import useArrayFromSearchParams from '@/app/dashboard/hooks/useArrayFromSearchParams';
+import useArrayFromSearchParams from '@/app/dashboard/hooks/useSearchParamsKeys';
 import { Loader } from 'lucide-react';
 
 const TableLoadingIndicator = () => {

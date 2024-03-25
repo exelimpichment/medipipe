@@ -34,7 +34,7 @@ export default function RootLayout({
               </ModalStoreProvider>
             </TanQueryClientProvider>
           </SessionProvider>
-          <Toaster expand={true} />
+          <Toaster richColors />
         </ThemeProvider>
       </body>
     </html>

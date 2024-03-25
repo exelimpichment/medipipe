@@ -1,21 +1,11 @@
-import { getTasks } from '@/actions/tasks';
+import { getTasks } from '@/actions/getTasks.action';
+
 import { useQuery } from '@tanstack/react-query';
 
-const useGetTasks = (
-  keyValueArray: {
-    [x: string]: string;
-  }[]
-) => {
-  const searchParams = keyValueArray.reduce((acc, obj) => {
-    for (const key in obj) {
-      acc[key] = obj[key];
-    }
-    return acc;
-  }, {});
-
+const useGetTasks = (searchParamsKeys: { [x: string]: string }) => {
   return useQuery({
-    queryKey: ['tasks', searchParams],
-    queryFn: async () => getTasks(searchParams),
+    queryKey: ['tasks', searchParamsKeys],
+    queryFn: async () => getTasks(searchParamsKeys),
   });
 };
 

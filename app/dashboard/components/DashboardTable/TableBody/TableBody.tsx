@@ -1,19 +1,41 @@
 'use client';
 
 import useGetTasks from '@/app/common/tanstackHooks/useGetTasks';
-import useArrayFromSearchParams from '@/app/dashboard/hooks/useArrayFromSearchParams';
+import useSearchParamsKeys from '@/app/dashboard/hooks/useSearchParamsKeys';
+import { useSearchParams } from 'next/navigation';
 import TableBodyRow from './TableBodyRow';
+import TableBodyRowSkeleton from './TableBodyRowSkeleton';
 
 const TableBody = () => {
-  const keyValueArray = useArrayFromSearchParams();
+  const searchParams = useSearchParams();
+  const limit = searchParams.get('limit') ?? 10;
 
-  const { status, data, error, isFetching } = useGetTasks(keyValueArray);
+  const searchParamsKeys = useSearchParamsKeys();
 
-  if (!data) return <h1>loading ...</h1>;
-  if (error) return <h1>error ...</h1>;
+  const { data, error, isPending } = useGetTasks(searchParamsKeys);
+
+  if (isPending)
+    return (
+      <tbody>
+        {Array(limit)
+          .fill(1)
+          .map((item, index) => (
+            <TableBodyRowSkeleton key={index} />
+          ))}
+      </tbody>
+    );
+
+  if (error)
+    return (
+      <tbody>
+        <tr className="bg-errorBgRed border-errorBorderRed flex h-96 w-full items-center justify-center border text-4xl">
+          <td>Error...</td>
+        </tr>
+      </tbody>
+    );
 
   return (
-    <tbody className="">
+    <tbody>
       {data?.map(
         ({
           createdAt,

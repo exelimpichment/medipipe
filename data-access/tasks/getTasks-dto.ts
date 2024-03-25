@@ -1,5 +1,6 @@
 import { auth } from '@/app/api/auth/[...nextauth]/route';
 import prisma from '@/lib/db';
+import { AuthenticationError } from '@/lib/utils';
 import 'server-only';
 import { TasksSchemaType, User } from '../types/taskTypes';
 import generateDynamicFilter from '../utils/generateDynamicFilter';
@@ -40,5 +41,10 @@ export const getTasksDTO = async (searchParams: TasksSchemaType) => {
   });
 
   const session = await auth();
+
+  if (!session?.user) {
+    throw new AuthenticationError();
+  }
+
   return canReceiveTaskList(session?.user) ? tasksList : null;
 };

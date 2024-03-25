@@ -6,15 +6,25 @@ import {
   CommandSeparator,
 } from '@/components/ui/command';
 
-import { ExternalLink, Pencil, ScanEye, Trash2 } from 'lucide-react';
+import useTableRowDropdownMutation from '@/app/dashboard/hooks/useTaskDelete';
+import { Trash2 } from 'lucide-react';
+import { Dispatch, SetStateAction } from 'react';
+import { dropdownContent } from './utils/dropdownContent';
 
-const dropdownContent = [
-  { key: 0, label: 'Preview', value: 'Preview', icon: ScanEye },
-  { key: 1, label: 'Open', value: 'Open', icon: ExternalLink },
-  { key: 2, label: 'Edit', value: 'Edit', icon: Pencil },
-];
+const TableBodyRowOptionsButtonDropdown = ({
+  taskId,
+  setDropdownOpen,
+}: {
+  taskId: number;
+  setDropdownOpen: Dispatch<SetStateAction<boolean>>;
+}) => {
+  const { mutate } = useTableRowDropdownMutation();
 
-const TableBodyRowOptionsButtonDropdown = () => {
+  const handleMutate = (taskId: number) => {
+    mutate(taskId);
+    setDropdownOpen(false);
+  };
+
   return (
     <div className="absolute right-0 z-10 mt-1 w-32 rounded-md border">
       <Command>
@@ -25,7 +35,7 @@ const TableBodyRowOptionsButtonDropdown = () => {
                 className="mb-1 cursor-pointer"
                 key={value}
                 value={value}
-                onSelect={(value) => {}}
+                // onSelect={() => mutation.mutate()}
               >
                 <Icon size={16} className="mr-2 text-muted-foreground" />
                 <span className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
@@ -37,7 +47,7 @@ const TableBodyRowOptionsButtonDropdown = () => {
             <CommandItem
               className=" cursor-pointer text-red-600"
               value={'Delete'}
-              onSelect={(value) => {}}
+              onSelect={() => handleMutate(taskId)}
             >
               <Trash2
                 size={16}

@@ -60,7 +60,7 @@ const TableBodyRow: React.FC<ITableBodyRowProps> = ({
         </Button>
       </td>
       <td className="w-12">
-        <TableBodyRowOptionsButton />
+        <TableBodyRowOptionsButton taskId={taskId} />
       </td>
     </tr>
   );

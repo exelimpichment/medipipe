@@ -1,11 +1,7 @@
 import TableBody from './TableBody';
 import TableHead from './TableHead';
 
-const Table = async ({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) => {
+const Table = () => {
   return (
     <table className="mt-4 flex w-full flex-col rounded-md ">
       <TableHead />

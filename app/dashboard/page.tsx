@@ -1,4 +1,4 @@
-import { getTasks } from '@/actions/tasks';
+import { getTasks } from '@/actions/getTasks.action';
 import {
   HydrationBoundary,
   QueryClient,
@@ -31,7 +31,7 @@ const Dashboard = async ({
           <WidthContainer>
             <DashboardHeading />
             <DashboardFilters />
-            <Table searchParams={searchParams} />
+            <Table />
             <DashboardPagination />
           </WidthContainer>
         </MainTagContainer>
