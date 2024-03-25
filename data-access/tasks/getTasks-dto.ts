@@ -40,11 +40,15 @@ export const getTasksDTO = async (searchParams: TasksSchemaType) => {
     },
   });
 
+  const tasksCount = await prisma.tasks.count();
+
   const session = await auth();
 
   if (!session?.user) {
     throw new AuthenticationError();
   }
 
-  return canReceiveTaskList(session?.user) ? tasksList : null;
+  return canReceiveTaskList(session?.user)
+    ? { tasksList, tasksCount }
+    : { tasksList: [], tasksCount: 0 };
 };

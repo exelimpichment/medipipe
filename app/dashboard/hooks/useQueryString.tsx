@@ -65,7 +65,7 @@ const useQueryString = () => {
     [searchParams]
   );
 
-  const createPageQueryString = useCallback(
+  const createPagePaginationQueryString = useCallback(
     (action: 'increment' | 'decrement') => {
       const params = new URLSearchParams(searchParams);
 
@@ -102,7 +102,7 @@ const useQueryString = () => {
     createDateQueryString,
     createLimitQueryString,
     createOrderQueryString,
-    createPageQueryString,
+    createPagePaginationQueryString,
     pathname,
     router,
     createQueryStringOnParamsDelete,

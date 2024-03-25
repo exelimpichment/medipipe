@@ -1,20 +1,19 @@
 'use client';
 
 import useGetTasks from '@/app/common/tanstackHooks/useGetTasks';
-import { useSearchParams } from 'next/navigation';
+import useValidateLimitSearchParams from '@/app/dashboard/hooks/useValidateLimitSearchParams';
 import TableBodyRow from './TableBodyRow';
 import TableBodyRowSkeleton from './TableBodyRowSkeleton';
 
 const TableBody = () => {
-  const searchParams = useSearchParams();
-  const limit = searchParams.get('limit') ?? 10;
+  const limit = useValidateLimitSearchParams();
 
   const { data, error, isPending } = useGetTasks();
 
   if (isPending)
     return (
       <tbody>
-        {Array(limit)
+        {Array(Number(limit))
           .fill(1)
           .map((item, index) => (
             <TableBodyRowSkeleton key={index} />
@@ -37,7 +36,7 @@ const TableBody = () => {
 
   return (
     <tbody>
-      {data?.map(
+      {data.tasksList?.map(
         ({
           createdAt,
           description,

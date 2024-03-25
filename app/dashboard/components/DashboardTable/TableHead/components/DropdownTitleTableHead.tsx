@@ -22,7 +22,7 @@ export function DropdownTitleTableHead() {
   const order = useOrderSearchParams();
 
   const OrderIcon =
-    order === 'ascending' ? ArrowUpWideNarrow : ArrowDownNarrowWide;
+    order === 'ascending' ? ArrowDownNarrowWide : ArrowUpWideNarrow;
 
   return (
     <th scope="col">

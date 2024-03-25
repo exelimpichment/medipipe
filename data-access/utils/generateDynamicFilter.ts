@@ -3,7 +3,7 @@ import { TasksSchemaType } from '../types/taskTypes';
 const generateDynamicFilter = (searchParams: TasksSchemaType) => {
   const dynamicFilter: {
     orderBy: {
-      createdAt: 'desc' | 'asc';
+      id: 'desc' | 'asc';
     };
     take: 10 | 20 | 30 | 40 | 50;
     where: {
@@ -21,7 +21,7 @@ const generateDynamicFilter = (searchParams: TasksSchemaType) => {
         gt?: Date;
       };
     };
-  } = { take: 10, where: {}, orderBy: { createdAt: 'asc' } };
+  } = { take: 10, where: {}, orderBy: { id: 'asc' } };
 
   if (searchParams.search) {
     dynamicFilter.where.title = {
@@ -62,7 +62,7 @@ const generateDynamicFilter = (searchParams: TasksSchemaType) => {
 
   if (searchParams.order) {
     const order = searchParams.order === 'ascending' ? 'asc' : 'desc';
-    dynamicFilter.orderBy.createdAt = order;
+    dynamicFilter.orderBy.id = order;
   }
 
   return dynamicFilter;

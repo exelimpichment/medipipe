@@ -25,7 +25,7 @@ export function RowsCountDropdown() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" className="h-8 px-3 py-2">
-          <span className="pr-3">{limit ?? 10}</span>
+          <span className="pr-3">{limit}</span>
           <ChevronsUpDown size={12} className="text-muted-foreground" />
         </Button>
       </DropdownMenuTrigger>

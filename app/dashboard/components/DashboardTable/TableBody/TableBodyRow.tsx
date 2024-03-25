@@ -45,21 +45,13 @@ const TableBodyRow: React.FC<ITableBodyRowProps> = ({
         <div className="flex-1">{title}</div>
       </td>
       <td className="flex w-28 items-center justify-start gap-1">
-        <div
-          // variant="ghost"
-          className="flex items-center justify-center gap-[6px] p-1"
-          // onClick={}
-        >
+        <div className="flex items-center justify-center gap-[6px] p-1">
           <StatusIcon size={16} className="text-muted-foreground " />
           <span>{status}</span>
         </div>
       </td>
       <td className="flex w-24 items-center justify-start gap-1">
-        <div
-          // variant="ghost"
-          className="flex items-center justify-center gap-[6px] p-1"
-          // onClick={}
-        >
+        <div className="flex items-center justify-center gap-[6px] p-1">
           <PriorityIcon size={16} className="text-muted-foreground" />
           <span>{priority}</span>
         </div>

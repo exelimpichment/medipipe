@@ -12,7 +12,7 @@ const PaginationButtonPanel = () => {
   const {
     pathname: currentPathname,
     router,
-    createPageQueryString,
+    createPagePaginationQueryString,
   } = useQueryString();
 
   return (
@@ -21,13 +21,23 @@ const PaginationButtonPanel = () => {
         type="button"
         variant={'outline'}
         className="h-8 w-8 p-0 text-muted-foreground"
+        onClick={() =>
+          router.push(
+            `${currentPathname}?${createPagePaginationQueryString(
+              'decrement'
+            )}`,
+            { scroll: false }
+          )
+        }
       >
         <ChevronsLeft size={16} />
       </Button>
       <Button
         onClick={() =>
           router.push(
-            `${currentPathname}?${createPageQueryString('decrement')}`,
+            `${currentPathname}?${createPagePaginationQueryString(
+              'decrement'
+            )}`,
             { scroll: false }
           )
         }
@@ -40,7 +50,9 @@ const PaginationButtonPanel = () => {
       <Button
         onClick={() =>
           router.push(
-            `${currentPathname}?${createPageQueryString('increment')}`,
+            `${currentPathname}?${createPagePaginationQueryString(
+              'increment'
+            )}`,
             { scroll: false }
           )
         }

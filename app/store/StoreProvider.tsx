@@ -2,18 +2,16 @@
 
 import { createContext, useContext, useRef, type ReactNode } from 'react';
 import { useStore, type StoreApi } from 'zustand';
-import { IModalStore, createModalStore } from './store';
+import { IStore, createModalStore } from './store';
 
-export const ModalStoreContext = createContext<StoreApi<IModalStore> | null>(
-  null
-);
+export const ModalStoreContext = createContext<StoreApi<IStore> | null>(null);
 
 export interface ModalStoreProviderProps {
   children: ReactNode;
 }
 
-export const ModalStoreProvider = ({ children }: ModalStoreProviderProps) => {
-  const storeRef = useRef<StoreApi<IModalStore>>();
+export const StoreProvider = ({ children }: ModalStoreProviderProps) => {
+  const storeRef = useRef<StoreApi<IStore>>();
   if (!storeRef.current) {
     storeRef.current = createModalStore();
   }
@@ -25,11 +23,11 @@ export const ModalStoreProvider = ({ children }: ModalStoreProviderProps) => {
   );
 };
 
-export const useModalStore = <T,>(selector: (store: IModalStore) => T): T => {
+export const useModalStore = <T,>(selector: (store: IStore) => T): T => {
   const modalStoreContext = useContext(ModalStoreContext);
 
   if (!modalStoreContext) {
-    throw new Error(`useModalStore must be used within ModalStoreProvider`);
+    throw new Error(`useModalStore must be used within StoreProvider`);
   }
 
   return useStore(modalStoreContext, selector);
