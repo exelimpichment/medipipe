@@ -21,7 +21,7 @@ const generateDynamicFilter = (searchParams: TasksSchemaType) => {
         gt?: Date;
       };
     };
-  } = { take: 10, where: {}, orderBy: { createdAt: 'desc' } };
+  } = { take: 10, where: {}, orderBy: { createdAt: 'asc' } };
 
   if (searchParams.search) {
     dynamicFilter.where.title = {

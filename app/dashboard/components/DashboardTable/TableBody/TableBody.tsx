@@ -1,7 +1,6 @@
 'use client';
 
 import useGetTasks from '@/app/common/tanstackHooks/useGetTasks';
-import useSearchParamsKeys from '@/app/dashboard/hooks/useSearchParamsKeys';
 import { useSearchParams } from 'next/navigation';
 import TableBodyRow from './TableBodyRow';
 import TableBodyRowSkeleton from './TableBodyRowSkeleton';
@@ -10,9 +9,7 @@ const TableBody = () => {
   const searchParams = useSearchParams();
   const limit = searchParams.get('limit') ?? 10;
 
-  const searchParamsKeys = useSearchParamsKeys();
-
-  const { data, error, isPending } = useGetTasks(searchParamsKeys);
+  const { data, error, isPending } = useGetTasks();
 
   if (isPending)
     return (
@@ -28,7 +25,11 @@ const TableBody = () => {
   if (error)
     return (
       <tbody>
-        <tr className="bg-errorBgRed border-errorBorderRed flex h-96 w-full items-center justify-center border text-4xl">
+        <tr
+          className={
+            'bg-errorBgRed border-errorBorderRed flex h-[480px] w-full items-center justify-center border text-4xl'
+          }
+        >
           <td>Error...</td>
         </tr>
       </tbody>

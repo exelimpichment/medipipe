@@ -1,12 +1,10 @@
 'use client';
 
 import useGetTasks from '@/app/common/tanstackHooks/useGetTasks';
-import useArrayFromSearchParams from '@/app/dashboard/hooks/useSearchParamsKeys';
 import { Loader } from 'lucide-react';
 
 const TableLoadingIndicator = () => {
-  const keyValueArray = useArrayFromSearchParams();
-  const { isFetching } = useGetTasks(keyValueArray);
+  const { isFetching } = useGetTasks();
 
   return (
     isFetching && (

@@ -10,7 +10,7 @@ const useValidateOrderSearchParams = () => {
   const result = orderSchema.safeParse(order);
 
   if (!result.success) {
-    return 'descending';
+    return 'ascending';
   }
 
   return result.data;

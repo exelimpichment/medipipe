@@ -8,8 +8,6 @@ async function main() {
     data: generateTasks(),
     skipDuplicates: true,
   });
-
-  console.log(tasks);
 }
 
 main()
