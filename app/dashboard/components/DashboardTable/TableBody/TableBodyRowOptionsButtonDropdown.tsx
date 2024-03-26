@@ -6,7 +6,7 @@ import {
   CommandSeparator,
 } from '@/components/ui/command';
 
-import useTableRowDropdownMutation from '@/app/dashboard/hooks/useTaskDelete';
+import useTaskDelete from '@/app/dashboard/hooks/useTaskDelete';
 import { Trash2 } from 'lucide-react';
 import { Dispatch, SetStateAction } from 'react';
 import { dropdownContent } from './utils/dropdownContent';
@@ -18,7 +18,7 @@ const TableBodyRowOptionsButtonDropdown = ({
   taskId: number;
   setDropdownOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
-  const { mutate } = useTableRowDropdownMutation();
+  const { mutate } = useTaskDelete();
 
   const handleMutate = (taskId: number) => {
     mutate(taskId);

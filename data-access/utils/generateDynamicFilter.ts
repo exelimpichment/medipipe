@@ -1,4 +1,4 @@
-import { TasksSchemaType } from '../types/taskTypes';
+import { TasksSchemaType } from '@/types';
 
 const generateDynamicFilter = (searchParams: TasksSchemaType) => {
   const dynamicFilter: {

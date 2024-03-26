@@ -14,7 +14,7 @@ export const generateTasks = () => {
       description:
         'Arranging installation of advanced medical equipment in the operation theater.',
       statusId: 3,
-      priorityId: 1,
+      priorityId: 3,
     },
     {
       title: 'Staff Training Session',
@@ -60,7 +60,7 @@ export const generateTasks = () => {
       userId: 'clu20m2z80000niehoi1vd6yo',
       description:
         'Planning for the expansion of hospital facilities to accommodate growing patient numbers.',
-      statusId: 1,
+      statusId: 2,
       priorityId: 3,
     },
     {
@@ -69,7 +69,7 @@ export const generateTasks = () => {
       description:
         'Organizing a campaign to raise awareness about preventive healthcare measures in the community.',
       statusId: 2,
-      priorityId: 2,
+      priorityId: 3,
     },
     {
       title: 'Medical Research Symposium',
@@ -85,7 +85,7 @@ export const generateTasks = () => {
       description:
         "Scheduling maintenance activities for the hospital's operating rooms.",
       statusId: 1,
-      priorityId: 2,
+      priorityId: 3,
     },
     {
       title: 'Medical Waste Disposal',
@@ -109,7 +109,7 @@ export const generateTasks = () => {
       description:
         'Organizing an event to recognize outstanding performance by hospital staff.',
       statusId: 1,
-      priorityId: 2,
+      priorityId: 3,
     },
     {
       title: 'Medical Equipment Calibration',
@@ -124,8 +124,8 @@ export const generateTasks = () => {
       userId: 'clu20m2z80000niehoi1vd6yo',
       description:
         'Conducting a survey to gather feedback from patients and improve services.',
-      statusId: 3,
-      priorityId: 1,
+      statusId: 1,
+      priorityId: 2,
     },
     {
       title: 'Healthcare Technology Update',

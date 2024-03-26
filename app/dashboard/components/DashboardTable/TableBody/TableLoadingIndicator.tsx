@@ -8,7 +8,7 @@ const TableLoadingIndicator = () => {
 
   return (
     isFetching && (
-      <div className="absolute bottom-2 right-2">
+      <div className="absolute right-2 top-2">
         <Loader className="animate-spin" />
       </div>
     )

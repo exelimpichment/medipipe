@@ -1,8 +1,10 @@
+import { tasksSchema } from '@/actions/schema/actionSchema';
 import { auth } from '@/app/api/auth/[...nextauth]/route';
 import prisma from '@/lib/db';
 import { AuthenticationError } from '@/lib/utils';
 import 'server-only';
-import { TasksSchemaType, User } from '../types/taskTypes';
+
+import { TasksSchemaType, User } from '@/types';
 import generateDynamicFilter from '../utils/generateDynamicFilter';
 
 function canReceiveTaskList(user: User) {
@@ -11,8 +13,9 @@ function canReceiveTaskList(user: User) {
 }
 
 export const getTasksDTO = async (searchParams: TasksSchemaType) => {
+  const result = tasksSchema.parse(searchParams);
   const tasksList = await prisma.tasks.findMany({
-    ...generateDynamicFilter(searchParams),
+    ...generateDynamicFilter(result),
 
     select: {
       id: true,

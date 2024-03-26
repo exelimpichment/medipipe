@@ -1,10 +1,8 @@
 'use server';
 
 import { getTasksDTO } from '@/data-access/tasks/getTasks-dto';
-import { tasksSchema } from './schema/actionSchema';
-import { getTaskParam } from './types/actionTypes';
+import { getTaskParam } from '@/types';
 
 export const getTasks = async (searchParams: getTaskParam) => {
-  const result = tasksSchema.parse(searchParams);
-  return getTasksDTO(result);
+  return getTasksDTO(searchParams);
 };

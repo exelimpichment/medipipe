@@ -28,6 +28,7 @@ const Dashboard = async ({
     <>
       <HydrationBoundary state={dehydrate(queryClient)}>
         <MainTagContainer>
+          <TableLoadingIndicator />
           <WidthContainer>
             <DashboardHeading />
             <DashboardFilters />
@@ -35,7 +36,6 @@ const Dashboard = async ({
             <DashboardPagination />
           </WidthContainer>
         </MainTagContainer>
-        <TableLoadingIndicator />
       </HydrationBoundary>
       <p className="pt-36"></p>
     </>
