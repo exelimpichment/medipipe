@@ -1,11 +1,19 @@
 import { TasksSchemaType } from '@/types';
 
 const generateDynamicFilter = (searchParams: TasksSchemaType) => {
+  console.log(searchParams);
+
   const dynamicFilter: {
     orderBy: {
       id: 'desc' | 'asc';
     };
-    take: 10 | 20 | 30 | 40 | 50;
+    skip: number;
+    cursor:
+      | {
+          id: number;
+        }
+      | undefined;
+    take: 10 | 20 | 30 | 40 | 50 | -10 | -20 | -30 | -40 | -50;
     where: {
       title?: {
         contains: string;
@@ -21,7 +29,13 @@ const generateDynamicFilter = (searchParams: TasksSchemaType) => {
         gt?: Date;
       };
     };
-  } = { take: 10, where: {}, orderBy: { id: 'asc' } };
+  } = {
+    take: 10,
+    where: {},
+    orderBy: { id: 'asc' },
+    skip: 0,
+    cursor: undefined,
+  };
 
   if (searchParams.search) {
     dynamicFilter.where.title = {
@@ -63,6 +77,13 @@ const generateDynamicFilter = (searchParams: TasksSchemaType) => {
   if (searchParams.order) {
     const order = searchParams.order === 'ascending' ? 'asc' : 'desc';
     dynamicFilter.orderBy.id = order;
+  }
+
+  if (searchParams.cursor) {
+    dynamicFilter.cursor = {
+      id: Number(searchParams.cursor),
+    };
+    dynamicFilter.skip = 1;
   }
 
   return dynamicFilter;

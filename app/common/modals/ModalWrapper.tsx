@@ -1,6 +1,6 @@
 'use client';
 
-import { useModalStore } from '@/app/store/StoreProvider';
+import { useAppStore } from '@/app/store/StoreProvider';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogClose, DialogContent } from '@/components/ui/dialog';
 import { X } from 'lucide-react';
@@ -10,7 +10,7 @@ import { useShallow } from 'zustand/react/shallow';
 const AddTaskModal = dynamic(() => import('./AddTaskModal'));
 
 const ModalWrapper = () => {
-  const [isOpen, onClose, modalInternals, setModalInternals] = useModalStore(
+  const [isOpen, onClose, modalInternals, setModalInternals] = useAppStore(
     useShallow((state) => [
       state.isOpen,
       state.onClose,

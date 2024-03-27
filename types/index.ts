@@ -1,9 +1,9 @@
 import { tasksSchema } from '@/actions/schema/actionSchema';
 import { z } from 'zod';
 
-export type getTaskParam = {
-  [key: string]: string | string[] | undefined;
-};
+// export type getTaskParam = {
+//   [key: string]: string | string[] | undefined;
+// };
 
 export type Tasks = {
   tasksList: {

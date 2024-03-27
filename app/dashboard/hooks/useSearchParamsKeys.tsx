@@ -1,7 +1,13 @@
+import { useAppStore } from '@/app/store/StoreProvider';
+import { TasksSchemaType } from '@/types';
 import { useSearchParams } from 'next/navigation';
+import { useShallow } from 'zustand/react/shallow';
 
 const useSearchParamsKeys = () => {
   const searchParams = useSearchParams();
+  const [dashboardCursor] = useAppStore(
+    useShallow((state) => [state.dashboardCursor])
+  );
 
   const keyValueArray = Array.from(searchParams.entries()).map(
     ([key, value]) => {
@@ -15,7 +21,13 @@ const useSearchParamsKeys = () => {
     return acc;
   }, {});
 
-  return searchParamsKeys;
+  if (dashboardCursor)
+    return {
+      ...searchParamsKeys,
+      cursor: String(dashboardCursor),
+    } as TasksSchemaType;
+
+  return searchParamsKeys as TasksSchemaType;
 };
 
 export default useSearchParamsKeys;

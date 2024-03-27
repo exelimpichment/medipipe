@@ -1,6 +1,6 @@
 'use client';
 
-import useGetTasks from '@/app/common/tanstackHooks/useGetTasks';
+import useGetTasks from '@/app/dashboard/hooks/tanstackHooks/useGetTasks';
 import { Loader } from 'lucide-react';
 
 const TableLoadingIndicator = () => {

@@ -1,4 +1,4 @@
-import { getTasks } from '@/actions/getTasks.action';
+import { TasksSchemaType } from '@/types';
 import {
   HydrationBoundary,
   QueryClient,
@@ -15,13 +15,14 @@ import TableLoadingIndicator from './components/DashboardTable/TableBody/TableLo
 const Dashboard = async ({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Omit<TasksSchemaType, 'cursor'>;
 }) => {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
     queryKey: ['tasks', searchParams],
-    queryFn: () => getTasks(searchParams),
+    // queryFn: () => getTasks(searchParams, undefined),
+    queryFn: () => Promise.reject(),
   });
 
   return (

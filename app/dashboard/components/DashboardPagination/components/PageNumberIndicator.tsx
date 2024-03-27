@@ -1,6 +1,6 @@
 'use client';
 
-import useGetTasks from '@/app/common/tanstackHooks/useGetTasks';
+import useGetTasks from '@/app/dashboard/hooks/tanstackHooks/useGetTasks';
 import useValidateLimitSearchParams from '@/app/dashboard/hooks/useValidateLimitSearchParams';
 import useValidatePageParams from '@/app/dashboard/hooks/useValidatePageParams';
 

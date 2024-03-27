@@ -6,7 +6,7 @@ import {
   CommandSeparator,
 } from '@/components/ui/command';
 
-import useTaskDelete from '@/app/dashboard/hooks/useTaskDelete';
+import useTaskDelete from '@/app/dashboard/hooks/tanstackHooks/useTaskDelete';
 import { Trash2 } from 'lucide-react';
 import { Dispatch, SetStateAction } from 'react';
 import { dropdownContent } from './utils/dropdownContent';

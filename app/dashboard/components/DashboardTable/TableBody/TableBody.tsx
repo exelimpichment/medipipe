@@ -1,6 +1,6 @@
 'use client';
 
-import useGetTasks from '@/app/common/tanstackHooks/useGetTasks';
+import useGetTasks from '@/app/dashboard/hooks/tanstackHooks/useGetTasks';
 import useValidateLimitSearchParams from '@/app/dashboard/hooks/useValidateLimitSearchParams';
 import TableBodyRow from './TableBodyRow';
 import TableBodyRowSkeleton from './TableBodyRowSkeleton';
@@ -26,7 +26,7 @@ const TableBody = () => {
       <tbody>
         <tr
           className={
-            'bg-errorBgRed border-errorBorderRed flex h-[480px] w-full items-center justify-center border text-4xl'
+            'flex h-[480px] w-full items-center justify-center border border-errorBorderRed bg-errorBgRed text-4xl'
           }
         >
           <td>Error...</td>

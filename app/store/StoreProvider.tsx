@@ -23,11 +23,11 @@ export const StoreProvider = ({ children }: ModalStoreProviderProps) => {
   );
 };
 
-export const useModalStore = <T,>(selector: (store: IStore) => T): T => {
+export const useAppStore = <T,>(selector: (store: IStore) => T): T => {
   const modalStoreContext = useContext(ModalStoreContext);
 
   if (!modalStoreContext) {
-    throw new Error(`useModalStore must be used within StoreProvider`);
+    throw new Error(`useAppStore must be used within StoreProvider`);
   }
 
   return useStore(modalStoreContext, selector);

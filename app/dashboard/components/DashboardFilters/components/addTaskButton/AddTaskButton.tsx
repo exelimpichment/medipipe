@@ -1,12 +1,12 @@
 'use client';
 
-import { useModalStore } from '@/app/store/StoreProvider';
+import { useAppStore } from '@/app/store/StoreProvider';
 import { Button } from '@/components/ui/button';
 import { Plus } from 'lucide-react';
 import { useShallow } from 'zustand/react/shallow';
 
 const AddTaskButton = () => {
-  const [onOpen, setModalInternals] = useModalStore(
+  const [onOpen, setModalInternals] = useAppStore(
     useShallow((state) => [state.onOpen, state.setModalInternals])
   );
 

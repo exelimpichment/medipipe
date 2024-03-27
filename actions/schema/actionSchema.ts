@@ -3,6 +3,7 @@ import 'server-only';
 import { z } from 'zod';
 
 export const tasksSchema = z.object({
+  cursor: z.number().optional(),
   priority: z
     .literal('high')
     .or(z.literal('low'))
