@@ -3,7 +3,7 @@ import 'server-only';
 import { z } from 'zod';
 
 export const tasksSchema = z.object({
-  cursor: z.number().optional(),
+  cursor: z.string().optional(),
   priority: z
     .literal('high')
     .or(z.literal('low'))
@@ -21,6 +21,11 @@ export const tasksSchema = z.object({
     .or(z.literal('30'))
     .or(z.literal('40'))
     .or(z.literal('50'))
+    .or(z.literal('-10'))
+    .or(z.literal('-20'))
+    .or(z.literal('-30'))
+    .or(z.literal('-40'))
+    .or(z.literal('-50'))
     .optional(),
   search: z
     .string()

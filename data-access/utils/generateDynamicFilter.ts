@@ -68,10 +68,17 @@ const generateDynamicFilter = (searchParams: TasksSchemaType) => {
   }
 
   if (searchParams.limit) {
-    const limit = Number(searchParams.limit);
-    if ([10, 20, 30, 40, 50].includes(limit)) {
-      dynamicFilter.take = limit as 10 | 20 | 30 | 40 | 50;
-    }
+    dynamicFilter.take = Number(searchParams.limit) as
+      | 10
+      | 20
+      | 30
+      | 40
+      | 50
+      | -10
+      | -20
+      | -30
+      | -40
+      | -50;
   }
 
   if (searchParams.order) {
@@ -83,7 +90,9 @@ const generateDynamicFilter = (searchParams: TasksSchemaType) => {
     dynamicFilter.cursor = {
       id: Number(searchParams.cursor),
     };
-    dynamicFilter.skip = 1;
+    Number(searchParams.limit) < 0
+      ? (dynamicFilter.skip = 0)
+      : (dynamicFilter.skip = 1);
   }
 
   return dynamicFilter;

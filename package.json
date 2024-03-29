@@ -31,6 +31,7 @@
     "@types/jest": "^29.5.11",
     "@types/mocha": "^10.0.6",
     "@types/nodemailer": "^6.4.14",
+    "@uidotdev/usehooks": "^2.4.1",
     "chai": "^5.0.3",
     "class-variance-authority": "^0.7.0",
     "cmdk": "^0.2.1",

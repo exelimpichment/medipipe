@@ -12,12 +12,9 @@ function canReceiveTaskList(user: User) {
   return true;
 }
 
-export const getTasksDTO = async (
-  searchParams: TasksSchemaType,
-  cursor: undefined | number
-) => {
-  const result = tasksSchema.parse({ ...searchParams, cursor });
-  console.log(result);
+export const getTasksDTO = async (searchParams: TasksSchemaType) => {
+  const result = tasksSchema.parse(searchParams);
+  console.log(searchParams);
 
   const tasksList = await prisma.tasks.findMany({
     ...generateDynamicFilter(result),
