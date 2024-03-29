@@ -1,26 +1,31 @@
 import { createStore } from 'zustand/vanilla';
 
-export type CounterState = {
-  count: number;
+type State = {
+  modalInternals: 'addTask' | null;
+  isOpen: boolean;
+  dashboardCursor: number | undefined;
 };
 
-export type CounterActions = {
-  decrementCount: () => void;
-  incrementCount: () => void;
+type Action = {
+  setModalInternals: (modalInternals: 'addTask' | null) => void;
+  onOpen: () => void;
+  onClose: () => void;
+  setDashboardCursor: (dashboardCursor: number) => void;
 };
 
-export type CounterStore = CounterState & CounterActions;
+export type IStore = State & Action;
 
-export const defaultInitState: CounterState = {
-  count: 0,
-};
+export const createModalStore = () => {
+  return createStore<IStore>()((set) => ({
+    isOpen: false,
+    modalInternals: null,
+    dashboardCursor: undefined,
 
-export const createCounterStore = (
-  initState: CounterState = defaultInitState
-) => {
-  return createStore<CounterStore>()((set) => ({
-    ...initState,
-    decrementCount: () => set((state) => ({ count: state.count - 1 })),
-    incrementCount: () => set((state) => ({ count: state.count + 1 })),
+    setModalInternals: (modalInternals) =>
+      set(() => ({ modalInternals: modalInternals })),
+    onOpen: () => set({ isOpen: true }),
+    onClose: () => set({ isOpen: false }),
+    setDashboardCursor: (dashboardCursor) =>
+      set(() => ({ dashboardCursor: dashboardCursor })),
   }));
 };

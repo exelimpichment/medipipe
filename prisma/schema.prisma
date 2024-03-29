@@ -1,27 +1,27 @@
 generator client {
-  provider = "prisma-client-js"
-
+  provider        = "prisma-client-js"
+  previewFeatures = ["relationJoins"]
 }
 
 datasource db {
-  provider = "mysql"
-  url = env("DATABASE_URL")
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
   relationMode = "prisma"
 }
-  
+
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String 
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String?  @db.Text
-  access_token       String?  @db.Text
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?  @db.Text
-  session_state      String?
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -35,17 +35,19 @@ model Session {
   userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-    @@index([userId])
+
+  @@index([userId])
 }
 
 model User {
   id            String    @id @default(cuid())
-  name          String?
+  name          String    @default("firstname secondname")
   email         String?   @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
   sessions      Session[]
+  tasks         Tasks[]
 }
 
 model VerificationToken {
@@ -54,4 +56,35 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Tasks {
+  id          Int        @id @default(autoincrement())
+  title       String
+  userId      String
+  description String
+  statusId    Int
+  priorityId  Int
+  createdAt   DateTime   @default(now()) @db.Timestamp(0)
+  priority    Priorities @relation(fields: [priorityId], references: [id], onDelete: NoAction)
+  status      Statuses   @relation(fields: [statusId], references: [id], onDelete: NoAction)
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([priorityId])
+  @@index([statusId])
+  @@index([userId])
+}
+
+model Statuses {
+  id         Int      @id @default(autoincrement())
+  statusName String
+  tasks      Tasks[]
+  updatedAt  DateTime @default(now()) @updatedAt
+}
+
+model Priorities {
+  id           Int      @id @default(autoincrement())
+  priorityName String
+  tasks        Tasks[]
+  updatedAt    DateTime @default(now()) @updatedAt
 }

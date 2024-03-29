@@ -14,9 +14,6 @@ const DashboardPagination = () => {
           <span>Rows per page</span>
           <RowsCountDropdown />
         </div>
-        <div className="">
-          <p>Page 1 of 10</p>
-        </div>
         <DashboardPaginationButtons />
       </div>
     </div>

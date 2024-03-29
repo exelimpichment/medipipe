@@ -1,3 +1,4 @@
+import useQueryString from '@/app/dashboard/hooks/useQueryString';
 import {
   Command,
   CommandEmpty,
@@ -5,18 +6,30 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
+  CommandSeparator,
 } from '@/components/ui/command';
+
 import { Dispatch, SetStateAction } from 'react';
+import { dropdownContent } from '../../utils/filterButtonDropdownArr';
 
 interface IFilterButtonDropdownProps {
   setDropdownOpen: Dispatch<SetStateAction<boolean>>;
-  setSelectedStatus: Dispatch<SetStateAction<string>>;
+  category: 'status' | 'priority';
+  selectedFilter: string | null;
 }
 
 const FilterButtonDropdown: React.FC<IFilterButtonDropdownProps> = ({
   setDropdownOpen,
-  setSelectedStatus,
+  category,
+  selectedFilter,
 }) => {
+  const {
+    createQueryString,
+    pathname: currentPathname,
+    router,
+    createQueryStringOnParamsDelete,
+  } = useQueryString();
+
   return (
     <div className="absolute left-0 mt-2 w-48 rounded-md border">
       <Command>
@@ -24,51 +37,50 @@ const FilterButtonDropdown: React.FC<IFilterButtonDropdownProps> = ({
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup>
-            {statuses.map((status) => (
+            {dropdownContent[category].map(({ icon: Icon, label, value }) => (
               <CommandItem
-                key={status.value}
-                value={status.value}
+                className="cursor-pointer"
+                key={value}
+                value={value}
                 onSelect={(value) => {
-                  setSelectedStatus(value);
+                  router.push(
+                    `${currentPathname}?${createQueryString(category, value)}`
+                  );
                   setDropdownOpen(false);
                 }}
               >
-                {status.label}
+                <Icon size={16} className="mr-2 text-muted-foreground" />
+                <span className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                  {label}
+                </span>
               </CommandItem>
             ))}
           </CommandGroup>
+
+          {selectedFilter && (
+            <>
+              <CommandSeparator />
+              <CommandGroup>
+                <CommandItem
+                  onSelect={() => {
+                    router.push(
+                      `${currentPathname}?${createQueryStringOnParamsDelete(
+                        category
+                      )}`
+                    );
+                    setDropdownOpen(false);
+                  }}
+                  className="cursor-pointer justify-center text-center"
+                >
+                  Clear filters
+                </CommandItem>
+              </CommandGroup>
+            </>
+          )}
         </CommandList>
       </Command>
     </div>
   );
 };
-
-type Status = {
-  value: string;
-  label: string;
-};
-
-const statuses: Status[] = [
-  {
-    value: 'backlog',
-    label: 'Backlog',
-  },
-  {
-    value: 'todo',
-    label: 'Todo',
-  },
-  {
-    value: 'in progress',
-    label: 'In Progress',
-  },
-  {
-    value: 'done',
-    label: 'Done',
-  },
-  {
-    value: 'canceled',
-    label: 'Canceled',
-  },
-];
 
 export default FilterButtonDropdown;
