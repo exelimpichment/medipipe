@@ -19,11 +19,10 @@
       "request": "launch",
       "command": "npm run dev",
       "serverReadyAction": {
-        "pattern": "- Local:.+(https?://.+)",
+        "pattern": "started server on .+, url: (https?://.+)",
         "uriFormat": "%s",
         "action": "debugWithChrome"
       }
     }
-  ],
-  "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"]
+  ]
 }

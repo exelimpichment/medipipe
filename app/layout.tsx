@@ -1,9 +1,14 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import ThemeProvider from './common/ThemeProvider';
-import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+import { Toaster } from 'sonner';
+import { inter } from './common/fonts/fonts';
+import SessionProvider from './common/providers/SessionProvider';
+import ThemeProvider from './common/providers/ThemeProvider';
+
+import { Modal } from './common/providers/ModalProvider';
+import TanQueryClientProvider from './common/providers/TanQueryClientProvider';
+import './globals.css';
+import { StoreProvider } from './store/StoreProvider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,9 +21,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider>{children}</ThemeProvider>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} `}>
+      <body>
+        <ThemeProvider>
+          <SessionProvider>
+            <TanQueryClientProvider>
+              {/* <NavBar /> */}
+              <StoreProvider>
+                {children}
+                <Modal />
+              </StoreProvider>
+            </TanQueryClientProvider>
+          </SessionProvider>
+          <Toaster richColors />
+        </ThemeProvider>
       </body>
     </html>
   );

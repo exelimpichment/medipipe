@@ -7,6 +7,7 @@
 // refactor: A code change that neither fixes a bug nor adds a feature
 // style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 // test: Adding missing tests or correcting existing tests
+// chore: changes that are not related to the application's logic but are necessary for the project's development process or for managing dependencies.
 
 module.exports = {
   extends: ['@commitlint/config-conventional'],
@@ -43,7 +44,7 @@ module.exports = {
         'test',
         'translation',
         'security',
-        'changeset',
+        'typo',
       ],
     ],
   },

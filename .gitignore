@@ -8,6 +8,7 @@
 
 # testing
 /coverage
+cypress.env.json
 
 # next.js
 /.next/
@@ -26,8 +27,14 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env*.local
-.env
+
+*.env
+*.env.example
+*.env.local
+*.env.staging
+*cypress.env.json
+cypress.env.json
+
 
 # vercel
 .vercel
@@ -35,3 +42,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+codeWars.ts
