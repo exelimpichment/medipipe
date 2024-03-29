@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
-import { signOut } from 'next-auth/react';
+// import { signOut } from 'next-auth/react';
 import WidthContainer from '../width-container/WidthContainer';
 import { useNavigation } from './hooks/useNavigation';
 
@@ -28,13 +28,7 @@ const NavBar = () => {
             </li>
           ))}
         </ul>
-        <button
-          type="button"
-          onClick={() => signOut()}
-          className="absolute right-0 top-0 text-white"
-        >
-          Sign out
-        </button>
+   
       </WidthContainer>
     </nav>
   );

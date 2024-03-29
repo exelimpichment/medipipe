@@ -5,7 +5,6 @@ import { inter } from './common/fonts/fonts';
 import SessionProvider from './common/providers/SessionProvider';
 import ThemeProvider from './common/providers/ThemeProvider';
 
-import NavBar from './common/navbar/Navbar';
 import { Modal } from './common/providers/ModalProvider';
 import TanQueryClientProvider from './common/providers/TanQueryClientProvider';
 import './globals.css';
@@ -27,7 +26,7 @@ export default function RootLayout({
         <ThemeProvider>
           <SessionProvider>
             <TanQueryClientProvider>
-              <NavBar />
+              {/* <NavBar /> */}
               <StoreProvider>
                 {children}
                 <Modal />
