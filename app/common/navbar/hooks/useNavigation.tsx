@@ -12,17 +12,18 @@ export const useNavigation = () => {
         href: '/dashboard',
         active: pathname === '/dashboard',
       },
+
       {
         id: 2,
-        title: 'Mailbox',
-        href: '/mailbox',
-        active: pathname === '/mailbox',
-      },
-      {
-        id: 3,
         title: 'Chat',
         href: '/chat',
         active: pathname === '/chat',
+      },
+      {
+        id: 3,
+        title: 'Mailbox',
+        href: '/mailbox',
+        active: pathname === '/mailbox',
       },
       {
         id: 4,

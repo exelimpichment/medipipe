@@ -21,6 +21,10 @@ const config = {
       colors: {
         errorBgRed: '#4c2a2c',
         errorBorderRed: '#d24f5b',
+        chatCard: '#17171c',
+        chatCardBorder: '#264929',
+        communicationLightColor: '#e11d48',
+        communicationDarkColor: '#262626',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

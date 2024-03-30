@@ -1,8 +1,6 @@
 import { TasksSchemaType } from '@/types';
 
 const generateDynamicFilter = (searchParams: TasksSchemaType) => {
-  console.log(searchParams);
-
   const dynamicFilter: {
     orderBy: {
       id: 'desc' | 'asc';

@@ -40,14 +40,16 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String    @default("firstname secondname")
-  email         String?   @unique
+  id            String       @id @default(cuid())
+  name          String       @default("firstname secondname")
+  email         String?      @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
   sessions      Session[]
   tasks         Tasks[]
+  GroupUsers    GroupUsers[]
+  Messages      Messages[]
 }
 
 model VerificationToken {
@@ -87,4 +89,34 @@ model Priorities {
   priorityName String
   tasks        Tasks[]
   updatedAt    DateTime @default(now()) @updatedAt
+}
+
+model Groups {
+  groupId    Int          @id @default(autoincrement())
+  groupName  String       @unique
+  GroupUsers GroupUsers[]
+  // Messages   Messages[]
+}
+
+model Messages {
+  messageId Int    @id @default(autoincrement())
+  user      User   @relation(fields: [userId], references: [id], onDelete: NoAction)
+  userId    String
+  // group     Groups @relation(fields: [groupId], references: [groupId], onDelete: NoAction)
+  // groupId   Int
+  message   String
+  // @@index([groupId])
+
+  @@index([userId])
+}
+
+model GroupUsers {
+  group   Groups @relation(fields: [groupId], references: [groupId], onDelete: NoAction)
+  groupId Int
+  user    User   @relation(fields: [userId], references: [id], onDelete: NoAction)
+  userId  String
+
+  @@id([groupId, userId])
+  @@index([groupId])
+  @@index([userId])
 }

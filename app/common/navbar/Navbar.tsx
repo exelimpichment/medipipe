@@ -18,7 +18,7 @@ const NavBar = () => {
               key={id}
               className={cn(
                 'flex h-7 items-center justify-center rounded-full px-4 hover:text-primary',
-                { 'bg-zinc-800': active },
+                { 'border-black bg-chatCard': active },
                 { 'text-white': active }
               )}
             >
@@ -28,7 +28,6 @@ const NavBar = () => {
             </li>
           ))}
         </ul>
-   
       </WidthContainer>
     </nav>
   );
