@@ -1,13 +1,13 @@
 import { createStore } from 'zustand/vanilla';
 
 type State = {
-  modalInternals: 'addTask' | null;
+  modalInternals: 'addTask' | 'addChat' | null;
   isOpen: boolean;
   dashboardCursor: number | undefined;
 };
 
 type Action = {
-  setModalInternals: (modalInternals: 'addTask' | null) => void;
+  setModalInternals: (modalInternals: 'addTask' | 'addChat' | null) => void;
   onOpen: () => void;
   onClose: () => void;
   setDashboardCursor: (dashboardCursor: number) => void;

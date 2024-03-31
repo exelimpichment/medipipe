@@ -1,4 +1,5 @@
 import { tasksSchema } from '@/actions/schema/actionSchema';
+import { getUsers } from '@/data-access/users/getUsers';
 import { z } from 'zod';
 
 // export type getTaskParam = {
@@ -27,3 +28,11 @@ export type User =
       image?: string | null | undefined;
     }
   | undefined;
+
+export interface IModalProvider {
+  AddChatModal: () => React.ReactNode;
+  AddTaskModal: () => React.ReactNode;
+}
+
+type ResolvedType<T> = T extends Promise<infer R> ? R : T;
+export type GetUsersReturnType = ResolvedType<ReturnType<typeof getUsers>>;

@@ -6,10 +6,16 @@ import SessionProvider from './common/providers/SessionProvider';
 import ThemeProvider from './common/providers/ThemeProvider';
 
 import NavBar from './common/navbar/Navbar';
-import { Modal } from './common/providers/ModalProvider';
+
+import dynamic from 'next/dynamic';
+
+import Modal from './common/modals/Modal';
 import TanQueryClientProvider from './common/providers/TanQueryClientProvider';
 import './globals.css';
 import { StoreProvider } from './store/StoreProvider';
+
+const AddTaskModal = dynamic(() => import('./common/modals/AddTaskModal'));
+const AddChatModal = dynamic(() => import('./common/modals/AddChatModal'));
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -30,7 +36,10 @@ export default function RootLayout({
               <NavBar />
               <StoreProvider>
                 {children}
-                <Modal />
+                <Modal>
+                  <AddTaskModal />
+                  <AddChatModal />
+                </Modal>
               </StoreProvider>
             </TanQueryClientProvider>
           </SessionProvider>
