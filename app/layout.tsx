@@ -9,6 +9,9 @@ import NavBar from './common/navbar/Navbar';
 
 import dynamic from 'next/dynamic';
 
+import { ErrorBoundary } from 'react-error-boundary';
+
+import AddChatModalFallback from './common/modals/AddChatModal/AddChatModalFallback';
 import Modal from './common/modals/Modal';
 import TanQueryClientProvider from './common/providers/TanQueryClientProvider';
 import './globals.css';
@@ -38,7 +41,9 @@ export default function RootLayout({
                 {children}
                 <Modal>
                   <AddTaskModal />
-                  <AddChatModal />
+                  <ErrorBoundary FallbackComponent={AddChatModalFallback}>
+                    <AddChatModal />
+                  </ErrorBoundary>
                 </Modal>
               </StoreProvider>
             </TanQueryClientProvider>

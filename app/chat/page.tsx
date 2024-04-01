@@ -32,7 +32,7 @@ const Chat = () => {
               variant="default"
               onClick={clickHandler}
             >
-              <PlusIcon className="h-4 w-4" />
+              <PlusIcon size={20} />
               <span className="sr-only">Create chat</span>
             </Button>
           </div>

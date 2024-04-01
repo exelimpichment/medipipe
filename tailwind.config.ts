@@ -25,6 +25,7 @@ const config = {
         chatCardBorder: '#264929',
         communicationLightColor: '#e11d48',
         communicationDarkColor: '#262626',
+        communicationDarkHover: '#1e1e1e',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

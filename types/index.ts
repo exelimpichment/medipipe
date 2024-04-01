@@ -1,4 +1,4 @@
-import { tasksSchema } from '@/actions/schema/actionSchema';
+import { tasksSchema } from '@/actions/schemas/tasksSchema';
 import { getUsers } from '@/data-access/users/getUsers';
 import { z } from 'zod';
 

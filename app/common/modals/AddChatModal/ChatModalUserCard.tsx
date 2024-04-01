@@ -1,4 +1,7 @@
+import { useAppStore } from '@/app/store/StoreProvider';
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { useShallow } from 'zustand/react/shallow';
 
 interface IChatModalUserCard {
   id: string;
@@ -13,8 +16,21 @@ const ChatModalUserCard: React.FC<IChatModalUserCard> = ({
   email,
   image,
 }) => {
+  const [selectModalCard, selectedChatModalCards] = useAppStore(
+    useShallow((state) => [state.selectModalCard, state.selectedChatModalCards])
+  );
   return (
-    <div className="mb-2 flex h-16 cursor-pointer items-center gap-2 rounded-lg border border-black bg-chatCard px-4 py-2">
+    <div
+      onClick={() => {
+        selectModalCard(id);
+      }}
+      className={cn(
+        'hover:bg-communicationDarkHover mb-2 flex h-16 cursor-pointer items-center gap-2 rounded-lg border border-black bg-chatCard px-4 py-2',
+        selectedChatModalCards.includes(id)
+          ? 'bg-communicationDarkHover'
+          : 'bg-chatCard'
+      )}
+    >
       <div className="">
         <Image
           src={image}

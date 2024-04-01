@@ -1,4 +1,4 @@
-import { tasksSchema } from '@/actions/schema/actionSchema';
+import { tasksSchema } from '@/actions/schemas/tasksSchema';
 import { auth } from '@/app/api/auth/[...nextauth]/route';
 import prisma from '@/lib/db';
 import { AuthenticationError } from '@/lib/utils';

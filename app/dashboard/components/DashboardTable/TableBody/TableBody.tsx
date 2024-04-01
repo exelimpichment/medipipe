@@ -26,10 +26,11 @@ const TableBody = () => {
       <tbody>
         <tr
           className={
-            'flex h-[480px] w-full items-center justify-center border border-errorBorderRed bg-errorBgRed text-4xl'
+            'flex h-[480px] w-full flex-col items-center justify-center border border-errorBorderRed bg-errorBgRed text-4xl'
           }
         >
           <td>Error...</td>
+          <td className=" text-lg text-gray-500">Please, reload the page.</td>
         </tr>
       </tbody>
     );
