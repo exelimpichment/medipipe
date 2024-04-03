@@ -3,7 +3,6 @@ import { useAppStore } from '@/app/store/StoreProvider';
 import { Button } from '@/components/ui/button';
 import { MessageCirclePlus, User, Users } from 'lucide-react';
 import { useShallow } from 'zustand/react/shallow';
-import useSetChat from '../hooks/useSetChat';
 
 const GroupsNavigation = () => {
   const [onOpen, setModalInternals] = useAppStore(
@@ -15,7 +14,6 @@ const GroupsNavigation = () => {
     onOpen();
   };
 
-  useSetChat();
   return (
     <div className="flex h-14 items-center justify-around px-1 pb-0 pt-2">
       <Button

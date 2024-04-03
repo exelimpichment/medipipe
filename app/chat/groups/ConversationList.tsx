@@ -9,6 +9,7 @@ const ConversationList: React.FC<IConversations> = ({ conversations }) => {
           <Conversation
             key={conversation.groupId}
             groupName={conversation.groupName}
+            groupId={conversation.groupId}
           />
         ))}
       </div>
