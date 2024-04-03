@@ -54,6 +54,12 @@ export const authOptions: NextAuthOptions = {
         return '/error/register-first';
       }
     },
+    session: async ({ session, token }: any) => {
+      if (session?.user) {
+        session.user.id = token.sub;
+      }
+      return session;
+    },
   },
 };
 

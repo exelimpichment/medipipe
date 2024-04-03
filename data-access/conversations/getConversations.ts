@@ -1,5 +1,7 @@
+'use server';
+
 import { getConversationsDTO } from './conversations-dto';
 
-export const getUsers = async () => {
+export const getConversations = async () => {
   return getConversationsDTO();
 };

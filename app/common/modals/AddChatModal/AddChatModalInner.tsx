@@ -1,5 +1,6 @@
 'use client';
 import { createChat } from '@/actions/createChat.action';
+import { generateChatName, generateFilteredUsers } from '@/app/chat/utils';
 import { useAppStore } from '@/app/store/StoreProvider';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -28,21 +29,18 @@ const AddChatModalInner: React.FC<Exclude<GetUsersReturnType, undefined>> = ({
     ])
   );
 
-  const filteredUsers = users.filter((user) => {
-    const nameMatches = user.name
-      .toLowerCase()
-      .includes(chatModalInput.toLowerCase());
-    const emailMatches = user.email
-      ? user.email.toLowerCase().includes(chatModalInput.toLowerCase())
-      : false;
-    return nameMatches || emailMatches;
-  });
-
   const handleClick = async () => {
     try {
-      await createChat();
+      await createChat(
+        selectedChatModalCards,
+        generateChatName(
+          generateFilteredUsers(users, chatModalInput),
+          selectedChatModalCards
+        )
+      );
       // onClose();
       // resetModalCart();
+      toast.success('Conversation created');
     } catch (error) {
       toast.error('Please try again');
     }
@@ -56,7 +54,7 @@ const AddChatModalInner: React.FC<Exclude<GetUsersReturnType, undefined>> = ({
         onChange={(e) => setChatModalInput(e.target.value)}
       />
       <div className="h-72 overflow-auto">
-        {filteredUsers.map((user) => (
+        {generateFilteredUsers(users, chatModalInput).map((user) => (
           <ChatModalUserCard
             key={user.id}
             id={user.id}
@@ -65,17 +63,23 @@ const AddChatModalInner: React.FC<Exclude<GetUsersReturnType, undefined>> = ({
             image={user.image ?? ''}
           />
         ))}
-        {/* Render a message if the filteredUsers array is empty */}
-        {filteredUsers.length === 0 && (
+
+        {generateFilteredUsers(users, chatModalInput).length === 0 && (
           <p className="mt-4 text-center text-gray-500">No users found</p>
         )}
       </div>
       <div className="mt-2 flex justify-end gap-2">
-        <Button className="h-[35px]" onClick={handleClick}>
+        <Button
+          className="h-[35px]"
+          onClick={handleClick}
+          disabled={selectedChatModalCards.length < 1}
+          variant={'default'}
+        >
           Create
         </Button>
         <Button
           className="h-[35px]"
+          disabled={selectedChatModalCards.length < 1}
           variant={'secondary'}
           onClick={() => resetModalCart()}
         >

@@ -18,6 +18,9 @@ const Modal = ({ children }: { children: React.ReactNode[] }) => {
   );
 
   const [isMounted, setIsMounted] = useState(false);
+  const [setChatModalInput] = useAppStore(
+    useShallow((state) => [state.setChatModalInput])
+  );
 
   useEffect(() => {
     setIsMounted(true);
@@ -29,6 +32,7 @@ const Modal = ({ children }: { children: React.ReactNode[] }) => {
 
   const clickHandler = async () => {
     onClose();
+    setChatModalInput('');
     await delay(150);
     setModalInternals(null);
   };

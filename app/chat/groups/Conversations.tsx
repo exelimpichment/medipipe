@@ -1,20 +1,13 @@
-import Conversation from './Conversation';
+import { IConversations } from '@/types';
+import ConversationList from './ConversationList';
+import GroupsNavigation from './GroupsNavigation';
 
-const Conversations = () => {
+const Conversations: React.FC<IConversations> = ({ conversations }) => {
   return (
-    <div className="hidden h-full w-[384px]  p-2  md:block lg:w-[420px]">
-      <Conversation />
-      <Conversation />
-      <Conversation />
-      <Conversation />
-      <Conversation />
-      <Conversation />
-      <Conversation />
-      <Conversation />
-      <Conversation />
-      <Conversation />
-      <Conversation />
-    </div>
+    <aside className="hidden h-full w-[384px] flex-col  border-r md:flex  lg:w-[420px] ">
+      <GroupsNavigation />
+      <ConversationList conversations={conversations} />
+    </aside>
   );
 };
 

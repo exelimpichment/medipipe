@@ -1,7 +1,7 @@
 import { useSearchParams } from 'next/navigation';
 import { z } from 'zod';
 
-const UseValidateCalendarParams = () => {
+const useValidateCalendarParams = () => {
   const searchParams = useSearchParams();
 
   const from = searchParams.get('from');
@@ -27,4 +27,4 @@ const UseValidateCalendarParams = () => {
   return { from: result.data.from, to: result.data.to };
 };
 
-export default UseValidateCalendarParams;
+export default useValidateCalendarParams;

@@ -25,7 +25,7 @@ const ChatModalUserCard: React.FC<IChatModalUserCard> = ({
         selectModalCard(id);
       }}
       className={cn(
-        'hover:bg-communicationDarkHover mb-2 flex h-16 cursor-pointer items-center gap-2 rounded-lg border border-black bg-chatCard px-4 py-2',
+        'mb-2 flex h-16 cursor-pointer items-center gap-2 rounded-lg border border-black bg-chatCard px-4 py-2 hover:bg-communicationDarkHover',
         selectedChatModalCards.includes(id)
           ? 'bg-communicationDarkHover'
           : 'bg-chatCard'
@@ -40,7 +40,7 @@ const ChatModalUserCard: React.FC<IChatModalUserCard> = ({
           className="rounded-full"
         />
       </div>
-      <div className="flex flex-col  gap-1">
+      <div className="flex h-full flex-col gap-1">
         <p className="text-sm font-medium leading-none">{name}</p>
         <p className="text-sm text-muted-foreground">{email}</p>
       </div>

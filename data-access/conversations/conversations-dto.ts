@@ -1,5 +1,5 @@
 import { auth } from '@/app/api/auth/[...nextauth]/route';
-// import prisma from '@/lib/db';
+import prisma from '@/lib/db';
 import { AuthenticationError } from '@/lib/utils';
 import 'server-only';
 
@@ -10,9 +10,17 @@ export const getConversationsDTO = async () => {
     throw new AuthenticationError();
   }
 
-  // const conversations = await prisma.tasks.delete({
-  //   where: {
-  //     id: taskId,
-  //   },
-  // });
+  const conversations = await prisma.groups.findMany({
+    select: {
+      groupId: true,
+      groupName: true,
+      groupUsers: {
+        where: {
+          userId: session.user.id,
+        },
+      },
+    },
+  });
+
+  return { conversations };
 };

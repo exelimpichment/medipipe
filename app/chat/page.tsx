@@ -1,42 +1,18 @@
-'use client';
+import { getConversations } from '@/data-access/conversations/getConversations';
+import Messages from './communication/Messages';
+import Conversations from './groups/Conversations';
+import NoChats from './noChats/NoChats';
 
-import { Button } from '@/components/ui/button';
-import { PlusIcon } from 'lucide-react';
-import { useShallow } from 'zustand/react/shallow';
-import { useAppStore } from '../store/StoreProvider';
+const Chat = async () => {
+  const response = await getConversations();
 
-const Chat = () => {
-  const [onOpen, setModalInternals] = useAppStore(
-    useShallow((state) => [state.onOpen, state.setModalInternals])
-  );
-
-  const clickHandler = () => {
-    setModalInternals('addChat');
-    onOpen();
-  };
+  if (response.conversations.length === 0) return <NoChats />;
 
   return (
-    <main className="overflow-hidden">
-      <div className="flex h-full w-full items-center justify-center border-t">
-        <div className="flex min-h-[70vh] items-center justify-center px-4 text-center">
-          <div className="space-y-2">
-            <p className="text-lg font-medium leading-none sm:text-xl md:text-2xl">
-              There are no chats yet.
-            </p>
-            <p className="text-sm leading-none text-gray-500 md:text-base dark:text-gray-400">
-              You can create one.
-            </p>
-            <Button
-              className="mx-auto mt-4 rounded-full"
-              size="icon"
-              variant="default"
-              onClick={clickHandler}
-            >
-              <PlusIcon size={20} />
-              <span className="sr-only">Create chat</span>
-            </Button>
-          </div>
-        </div>
+    <main className="overflow-hidden  border-t">
+      <div className="flex h-full">
+        <Conversations conversations={response.conversations} />
+        <Messages />
       </div>
     </main>
   );

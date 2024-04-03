@@ -93,8 +93,8 @@ model Priorities {
 
 model Groups {
   groupId    Int          @id @default(autoincrement())
-  groupName  String       @unique
-  GroupUsers GroupUsers[]
+  groupName  String
+  groupUsers GroupUsers[]
   // Messages   Messages[]
 }
 

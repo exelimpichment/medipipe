@@ -26,6 +26,7 @@ export type User =
       name?: string | null | undefined;
       email?: string | null | undefined;
       image?: string | null | undefined;
+      id: string | null | undefined;
     }
   | undefined;
 
@@ -36,3 +37,23 @@ export interface IModalProvider {
 
 type ResolvedType<T> = T extends Promise<infer R> ? R : T;
 export type GetUsersReturnType = ResolvedType<ReturnType<typeof getUsers>>;
+
+export type FilteredUsers = {
+  id: string;
+  name: string;
+  email: string | null;
+  image: string | null;
+}[];
+
+export type SelectedChatModalCards = string[];
+
+export interface IConversations {
+  conversations: {
+    groupId: number;
+    groupName: string;
+    groupUsers: {
+      groupId: number;
+      userId: string;
+    }[];
+  }[];
+}
