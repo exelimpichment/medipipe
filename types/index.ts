@@ -57,3 +57,8 @@ export interface IConversations {
     }[];
   }[];
 }
+
+export type ChatSearchParams = {
+  [key: string]: string | string[] | undefined;
+  groupId?: string;
+};

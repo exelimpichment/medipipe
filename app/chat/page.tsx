@@ -1,34 +1,36 @@
+import { chatSearchParamsSchema } from '@/actions/schemas/chatSchemas';
+import { getConversations } from '@/data-access/chat/conversations/getConversations';
+import { getMessages } from '@/data-access/chat/messages/getMessages';
+import { ChatSearchParams } from '@/types';
 import {
   HydrationBoundary,
   QueryClient,
   dehydrate,
 } from '@tanstack/react-query';
-import { z } from 'zod';
 import Messages from './communication/Messages';
 import Conversations from './groups/Conversations';
+import NoChats from './noChats/NoChats';
 
-type SearchParams = {
-  [key: string]: string | string[] | undefined;
-  groupId?: string; // groupId is optional
-};
-
-const chatSchema = z.coerce.number();
-
-const Chat = async ({ searchParams }: { searchParams: SearchParams }) => {
-  const validatedGroupId = chatSchema.safeParse(searchParams.groupId);
-  console.log(validatedGroupId);
+const Chat = async ({ searchParams }: { searchParams: ChatSearchParams }) => {
+  const validatedGroupId = chatSearchParamsSchema.safeParse(
+    searchParams.groupId
+  );
   const groupId = validatedGroupId.success ? validatedGroupId.data : 0;
 
   const queryClient = new QueryClient();
 
-  // const response = await queryClient.fetchQuery({
-  //   queryKey: [groupId],
-  //   queryFn: () => getMessages({ groupId }),
-  // });
+  const conversationsList = getConversations();
 
-  // if (response.messages.length === 0) {
-  //   return <NoChats />;
-  // }
+  const messagesList = queryClient.fetchQuery({
+    queryKey: [groupId],
+    queryFn: () => getMessages({ groupId }),
+  });
+
+  const [conversations] = await Promise.all([conversationsList, messagesList]);
+
+  if (conversations.conversations.length === 0) {
+    return <NoChats />;
+  }
 
   return (
     <main className="overflow-hidden  border-t">

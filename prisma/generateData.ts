@@ -156,7 +156,7 @@ export const generateTasks = () => {
 export const generateMessages = () => {
   return [
     {
-      userId: 'clu20m2z80000niehoi1vd6yo',
+      userId: 'cluez6kjq0003ppf496wpgc8n',
       groupId: 15,
       message: 'this is a test message',
     },
@@ -166,17 +166,17 @@ export const generateMessages = () => {
       message: 'this is a reply message',
     },
     {
-      userId: 'clu20m2z80000niehoi1vd6yo',
+      userId: 'cluez6kjq0003ppf496wpgc8n',
       groupId: 15,
       message: "Hey everyone, just checking in to see how you're all doing!",
     },
     {
-      userId: 'cluez6t8u0006ppf4utln4ddg',
+      userId: 'clu20m2z80000niehoi1vd6yo',
       groupId: 15,
       message: "I'm doing great, thanks for asking!",
     },
     {
-      userId: 'clu20m2z80000niehoi1vd6yo',
+      userId: 'cluez6kjq0003ppf496wpgc8n',
       groupId: 15,
       message: 'Feeling a bit tired today, but hanging in there.',
     },
@@ -186,7 +186,7 @@ export const generateMessages = () => {
       message: 'Any plans for the weekend?',
     },
     {
-      userId: 'cluez6t8u0006ppf4utln4ddg',
+      userId: 'cluez6kjq0003ppf496wpgc8n',
       groupId: 15,
       message: 'Not really, just going to relax at home. What about you?',
     },

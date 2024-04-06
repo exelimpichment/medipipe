@@ -21,6 +21,7 @@ export const getConversationsDTO = async () => {
       },
     },
   });
+  console.log(conversations);
 
   return { conversations };
 };
