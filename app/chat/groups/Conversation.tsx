@@ -28,7 +28,8 @@ const Conversation: React.FC<IConversation> = ({ groupName, groupId }) => {
       className={cn(
         'mb-2 flex h-16 cursor-pointer items-center gap-2 rounded-lg border border-black bg-chatCard px-4 py-2 hover:bg-communicationDarkHover',
         {
-          'bg-communicationDarkHover': Number(sanitizedGroupId) === groupId,
+          'border border-yellow-300  bg-communicationDarkHover':
+            Number(sanitizedGroupId) === groupId,
           'bg-chatCard': Number(sanitizedGroupId) !== groupId,
         }
       )}

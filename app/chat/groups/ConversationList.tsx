@@ -1,7 +1,8 @@
-import { IConversations } from '@/types';
+import { getConversations } from '@/data-access/chat/conversations/getConversations';
 import Conversation from './Conversation';
 
-const ConversationList: React.FC<IConversations> = ({ conversations }) => {
+const ConversationList = async () => {
+  const { conversations } = await getConversations();
   return (
     <div className="">
       <div className=" p-2 ">

@@ -1,11 +1,18 @@
 import { PrismaClient } from '@prisma/client';
-import { generateTasks } from './generateTasks';
+import { generateMessages } from './generateData';
 
 const prisma = new PrismaClient();
 
+// async function main() {
+//   const tasks = await prisma.tasks.createMany({
+//     data: generateTasks(),
+//     skipDuplicates: true,
+//   });
+// }
+
 async function main() {
-  const tasks = await prisma.tasks.createMany({
-    data: generateTasks(),
+  const tasks = await prisma.messages.createMany({
+    data: generateMessages(),
     skipDuplicates: true,
   });
 }

@@ -1,3 +1,4 @@
+import { getTasks } from '@/actions/getTasks.action';
 import { TasksSchemaType } from '@/types';
 import {
   HydrationBoundary,
@@ -21,8 +22,7 @@ const Dashboard = async ({
 
   await queryClient.prefetchQuery({
     queryKey: ['tasks', searchParams],
-    // queryFn: () => getTasks(searchParams, undefined),
-    queryFn: () => Promise.reject(),
+    queryFn: () => getTasks(searchParams),
   });
 
   return (

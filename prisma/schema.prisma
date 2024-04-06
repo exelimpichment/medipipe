@@ -95,18 +95,19 @@ model Groups {
   groupId    Int          @id @default(autoincrement())
   groupName  String
   groupUsers GroupUsers[]
-  // Messages   Messages[]
+  Messages   Messages[]
 }
 
 model Messages {
-  messageId Int    @id @default(autoincrement())
-  user      User   @relation(fields: [userId], references: [id], onDelete: NoAction)
+  messageId Int      @id @default(autoincrement())
+  user      User     @relation(fields: [userId], references: [id], onDelete: NoAction)
   userId    String
-  // group     Groups @relation(fields: [groupId], references: [groupId], onDelete: NoAction)
-  // groupId   Int
+  group     Groups   @relation(fields: [groupId], references: [groupId], onDelete: NoAction)
+  groupId   Int
   message   String
-  // @@index([groupId])
+  updatedAt DateTime @default(now()) @updatedAt
 
+  @@index([groupId])
   @@index([userId])
 }
 
